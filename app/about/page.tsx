@@ -184,7 +184,7 @@ export default function AboutPage() {
                   </li>
                   <li className={styles.comparisonItem}>
                     <span className={styles.checkIcon} aria-hidden="true">✓</span>
-                    <span>Sub-second static compilation and 99.8% Core Web Vitals</span>
+                    <span>Sub-second static compilation and optimized Core Web Vitals</span>
                   </li>
                   <li className={styles.comparisonItem}>
                     <span className={styles.checkIcon} aria-hidden="true">✓</span>
@@ -399,8 +399,8 @@ export default function AboutPage() {
             <div className={styles.compactCard}>
               <h3 className={styles.compactCardTitle}>Sub-Second Performance</h3>
               <p className={styles.compactCardText}>
-                We guarantee your platform passes Core Web Vitals with straight-A
-                scores, ensuring optimal organic search crawlability and conversion efficiency.
+                We architect your platform to pass Core Web Vitals with optimal
+                scores, ensuring frictionless organic search crawlability and conversion efficiency.
               </p>
             </div>
 

@@ -88,23 +88,23 @@ export function Hero() {
         <div className={styles.metricsBar}>
           <div className={styles.metricsGrid}>
             <div className={styles.metricItem}>
-              <span className={styles.metricValue}>$50M+</span>
-              <span className={styles.metricLabel}>Client Revenue Influenced</span>
+              <span className={styles.metricValue}>Bespoke</span>
+              <span className={styles.metricLabel}>Handcrafted Code & Zero Templates</span>
             </div>
 
             <div className={styles.metricItem}>
-              <span className={styles.metricValue}>120+</span>
-              <span className={styles.metricLabel}>Digital Platforms Built</span>
+              <span className={styles.metricValue}>Next.js 16</span>
+              <span className={styles.metricLabel}>Modern Edge & Static Architecture</span>
             </div>
 
             <div className={styles.metricItem}>
-              <span className={styles.metricValue}>99.8%</span>
-              <span className={styles.metricLabel}>Uptime & Speed Rating</span>
+              <span className={styles.metricValue}>Sub-Second</span>
+              <span className={styles.metricLabel}>Target Paint Times & Clean CSS</span>
             </div>
 
             <div className={styles.metricItem}>
-              <span className={styles.metricValue}>14+</span>
-              <span className={styles.metricLabel}>Global Markets Reached</span>
+              <span className={styles.metricValue}>100% IP</span>
+              <span className={styles.metricLabel}>Complete Client Code Ownership</span>
             </div>
           </div>
 

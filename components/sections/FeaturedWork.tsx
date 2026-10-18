@@ -11,13 +11,13 @@ export function FeaturedWork() {
       <div className="container">
         {/* Section Header */}
         <div className={styles.headerBlock}>
-          <span className={styles.sectionLabel}>Selected Case Studies</span>
+          <span className={styles.sectionLabel}>Selected Architectural Work</span>
           <h2 className={styles.sectionHeading}>
-            Proven Commercial Impact for Visionary Brands.
+            Architectural Systems & Design Demonstrations.
           </h2>
           <p className={styles.sectionLead}>
-            We measure our success by the exponential revenue, market authority,
-            and operational leverage we architect for our client partners.
+            Explore our flagship digital platforms, headless architectures, and
+            brand systems engineered to international standards.
           </p>
         </div>
 

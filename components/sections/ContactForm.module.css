@@ -366,22 +366,105 @@
   gap: var(--space-4);
 }
 
-.whatsappVipBtn {
+.backendNoticeBox {
+  background-color: var(--color-warm-white);
+  border: 1px solid rgba(114, 47, 55, 0.15);
+  border-left: 3px solid var(--color-burgundy);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-6);
+  text-align: left;
+  font-size: var(--text-xs);
+  line-height: var(--leading-relaxed);
+  color: var(--color-warm-gray);
+}
+
+.backendNoticeTitle {
+  display: block;
+  font-weight: var(--font-semibold);
+  color: var(--color-burgundy);
+  margin-bottom: var(--space-1);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+}
+
+.briefSummaryBox {
+  background-color: var(--color-ivory);
+  border: 1px solid var(--color-champagne);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-6);
+  text-align: left;
+  font-size: var(--text-xs);
+  width: 100%;
+}
+
+.briefSummaryRow {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-1) 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.briefSummaryRow:last-child {
+  border-bottom: none;
+}
+
+.briefSummaryLabel {
+  font-weight: var(--font-medium);
+  color: var(--color-warm-gray);
+}
+
+.briefSummaryVal {
+  font-weight: var(--font-semibold);
+  color: var(--color-ebony);
+  text-align: right;
+}
+
+.emailDispatchBtn {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-3);
-  background-color: #128C7E;
+  justify-content: center;
+  gap: var(--space-2);
+  background-color: var(--color-burgundy);
   color: #FFFFFF;
   padding: var(--space-3) var(--space-6);
   border-radius: var(--radius-sm);
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
   text-decoration: none;
-  transition: background-color var(--duration-fast) var(--ease-out);
+  width: 100%;
+  max-width: 420px;
+  transition: all var(--duration-fast) var(--ease-out);
 }
 
-.whatsappVipBtn:hover {
-  background-color: #075E54;
+.emailDispatchBtn:hover {
+  background-color: var(--color-charcoal);
+  transform: translateY(-1px);
+}
+
+.copyBriefBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  background-color: transparent;
+  color: var(--color-ebony);
+  border: 1px solid var(--color-champagne);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  width: 100%;
+  max-width: 420px;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.copyBriefBtn:hover {
+  border-color: var(--color-burgundy);
+  color: var(--color-burgundy);
+  background-color: var(--color-ivory);
 }
 
 .resetBtn {

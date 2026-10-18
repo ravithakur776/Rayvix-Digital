@@ -17,7 +17,7 @@ export function DispatchForm() {
   if (isSubmitted) {
     return (
       <div className={styles.successMessage} role="status">
-        <span>✓ Subscribed to The Rayvix Dispatch. Welcome to the architectural circle.</span>
+        <span>Intake registered for {email}. Note: Live dispatch webhook pipeline is pending production configuration prior to domain launch.</span>
       </div>
     );
   }

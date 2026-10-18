@@ -169,22 +169,24 @@ export default async function CaseStudyPage({ params }: PageProps) {
       </section>
 
       {/* ──────────────────────────────────────────────────
-          EXECUTIVE TESTIMONIAL
+          STUDIO CONCEPT & ARCHITECTURAL SPECIFICATION
           ────────────────────────────────────────────────── */}
-      <section className={styles.testimonialSection} aria-label="Client Testimonial">
-        <div className="container">
-          <div className={styles.testimonialCard}>
-            <div className={styles.quoteMark} aria-hidden="true">“</div>
-            <blockquote className={styles.quoteText}>
-              {project.testimonial.quote}
-            </blockquote>
-            <div className={styles.quoteAuthor}>{project.testimonial.author}</div>
-            <div className={styles.quoteRole}>
-              {project.testimonial.role}, {project.testimonial.company}
+      {project.studioNote && (
+        <section className={styles.testimonialSection} aria-label="Studio Concept Rationale">
+          <div className="container">
+            <div className={styles.testimonialCard}>
+              <div className={styles.quoteMark} aria-hidden="true">✦</div>
+              <blockquote className={styles.quoteText}>
+                {project.studioNote.summary}
+              </blockquote>
+              <div className={styles.quoteAuthor}>Rayvix Digital Architectural Guild</div>
+              <div className={styles.quoteRole}>
+                {project.studioNote.discipline} • Studio Systems Prototype
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ──────────────────────────────────────────────────
           BOTTOM INQUIRY BAR

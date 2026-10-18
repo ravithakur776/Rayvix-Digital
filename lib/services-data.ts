@@ -49,7 +49,7 @@ export const SERVICES_DATA: ServiceDetail[] = [
       {
         title: "Zero-Bloat Performance",
         description:
-          "Handcrafted CSS and optimized script payloads guarantee lightning-fast first contentful paint and frictionless user navigation.",
+          "Handcrafted CSS and optimized script payloads deliver lightning-fast first contentful paint and frictionless user navigation.",
       },
       {
         title: "Omni-Device Responsiveness",

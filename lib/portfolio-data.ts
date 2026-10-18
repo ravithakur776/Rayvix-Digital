@@ -1,6 +1,6 @@
 /* ============================================================
-   RAYVIX DIGITAL — Portfolio Case Studies Data & Specifications
-   Single source of truth for client case studies and selected works.
+   RAYVIX DIGITAL — Portfolio Case Studies & Concept Architecture
+   Single source of truth for architectural systems demonstrations.
    ============================================================ */
 
 export interface CaseStudyMetric {
@@ -8,10 +8,16 @@ export interface CaseStudyMetric {
   label: string;
 }
 
+export interface StudioConceptNote {
+  summary: string;
+  discipline: string;
+}
+
 export interface CaseStudyDetail {
   slug: string;
   title: string;
   client: string;
+  isConcept: boolean;
   category:
     | "Web Development"
     | "Creative Direction"
@@ -31,39 +37,35 @@ export interface CaseStudyDetail {
   solution: string;
   technologies: string[];
   deliverables: string[];
-  testimonial: {
-    quote: string;
-    author: string;
-    role: string;
-    company: string;
-  };
+  studioNote: StudioConceptNote;
 }
 
 export const PORTFOLIO_DATA: CaseStudyDetail[] = [
   {
     slug: "lumina-luxury-living",
     title: "Lumina Luxury Living",
-    client: "Lumina Developments Ltd.",
+    client: "Studio Concept Architecture",
+    isConcept: true,
     category: "Web Development",
     tags: ["Next.js 16", "Brand Identity", "High-Ticket Funnel", "Headless CMS"],
     year: "2026",
-    duration: "8 Weeks",
+    duration: "Concept Prototype",
     heroImage: "/images/case-study-stage.webp",
-    metricHighlight: "+340% Qualified Inquiries",
+    metricHighlight: "Next.js 16 • Headless CMS",
     metrics: [
-      { value: "+340%", label: "High-Ticket Inbound Inquiries" },
-      { value: "0.38s", label: "Global Load Time" },
-      { value: "$18.5M", label: "Attributed Property Sales" },
-      { value: "100%", label: "Core Web Vitals Score" },
+      { value: "Next.js 16", label: "App Router Architecture" },
+      { value: "< 0.4s", label: "Target First Paint" },
+      { value: "Sanity CMS", label: "Headless Content Pipeline" },
+      { value: "100%", label: "Custom Code Ownership" },
     ],
     tagline: "High-Performance Web Architecture for Premium Real Estate",
     overview:
-      "Lumina Luxury Living required an elite digital presence worthy of their ultra-luxury residential properties across prime regional markets. We engineered a bespoke Next.js web application paired with an editorial visual identity that transformed how prospective buyers explore multi-million dollar estates.",
+      "Lumina Luxury Living is a studio architectural prototype demonstrating how an ultra-luxury residential property platform can be engineered with Next.js App Router and an editorial visual identity to provide frictionless property exploration.",
     challenge:
-      "The client's previous WordPress platform suffered from slow load times (>4.2 seconds), fragile plugin dependencies, and an impersonal enquiry form that failed to convert high-net-worth buyers browsing from mobile devices.",
+      "Conventional real estate websites frequently suffer from slow load times (>4 seconds), fragile plugin dependencies, and bloated template themes that fail to convey prestige or convert high-net-worth mobile visitors.",
     solution:
-      "Rayvix Digital rebuilt Lumina's platform from the foundation up using Next.js App Router, handcrafted CSS modules, and an intuitive Sanity headless CMS. We integrated high-resolution floorplan viewers, interactive virtual walk-throughs, and an automated lead qualification triage directly into their executive sales team's WhatsApp and CRM.",
-    technologies: ["Next.js 16", "React 19", "TypeScript", "Pure CSS Modules", "Sanity CMS", "Vercel Edge"],
+      "Rayvix Digital architected a bespoke Next.js system using handcrafted CSS modules, high-resolution floorplan viewers, responsive virtual walk-through components, and an automated lead qualification triage directly connected to CRM endpoints.",
+    technologies: ["Next.js 16", "React 19", "TypeScript", "Pure CSS Modules", "Sanity CMS", "Edge Compilation"],
     deliverables: [
       "Bespoke Web Application Architecture",
       "Living Design System & Token Suite",
@@ -71,76 +73,74 @@ export const PORTFOLIO_DATA: CaseStudyDetail[] = [
       "Automated High-Ticket Lead Triage",
       "Global CDN & Edge Optimization",
     ],
-    testimonial: {
-      quote:
-        "Rayvix Digital elevated our digital presence to international luxury standards. The speed, aesthetic sophistication, and caliber of inbound buyer inquiries exceeded our highest expectations.",
-      author: "Aditya Singhania",
-      role: "Managing Director",
-      company: "Lumina Luxury Living",
+    studioNote: {
+      summary:
+        "Engineered as an ultra-luxury real estate concept demonstrating how Next.js 16 and Sanity CMS deliver sub-second floorplan exploration for high-intent buyers without bloated template frameworks.",
+      discipline: "Web Systems Architecture",
     },
   },
   {
     slug: "aurora-health-clinic",
     title: "Aurora Integrative Health",
-    client: "Aurora Medical Group",
+    client: "Studio Concept Architecture",
+    isConcept: true,
     category: "SEO & Marketing",
     tags: ["Google Maps SEO", "Digital Systems", "Local Pack Dominance", "Patient Portal"],
     year: "2026",
-    duration: "10 Weeks",
+    duration: "Concept Prototype",
     heroImage: "/images/case-study-bloom.webp",
-    metricHighlight: "#1 Google Maps Ranking",
+    metricHighlight: "Local Search Architecture",
     metrics: [
-      { value: "#1", label: "Google Maps & Local Pack Rank" },
-      { value: "+420%", label: "Direct Appointment Bookings" },
-      { value: "14,000+", label: "Monthly High-Intent Visitors" },
-      { value: "4.9★", label: "Verified Review Authority" },
+      { value: "Local SEO", label: "Multi-Location Architecture" },
+      { value: "Schema.org", label: "Entity Knowledge Graph" },
+      { value: "Automated", label: "Triage & Booking Pipeline" },
+      { value: "Zero Bloat", label: "Handcrafted CSS Modules" },
     ],
-    tagline: "Local Search Domination & Automated Patient Acquisition",
+    tagline: "Local Search Architecture & Automated Patient Acquisition",
     overview:
-      "Aurora Medical Group operates premier wellness and specialized medical clinics. They partnered with Rayvix Digital to establish definitive search authority across Mathura, Vrindavan, and Agra, backed by a frictionless appointment booking pipeline.",
+      "Aurora Integrative Health is a specialized healthcare concept engineered to demonstrate how local entity SEO, structured JSON-LD schemas, and streamlined appointment scheduling establish definitive search visibility across regional hubs.",
     challenge:
-      "Despite clinical excellence, Aurora was losing patients to competitors who ranked higher on Google Maps. Their telephone reception lines were overwhelmed, leading to high drop-off rates and missed consultations during peak hours.",
+      "Regional medical practices often struggle with fragmented Google Business profiles, unoptimized local schema, and overwhelmed telephone reception that creates high appointment drop-off rates.",
     solution:
-      "We executed an aggressive technical and local SEO overhaul: schema markup for medical entities, location landing pages, synchronized directory citations, and an automated online booking system. Patients can now schedule consultations 24/7 with instant WhatsApp reminders and calendar confirmation.",
+      "We modeled an aggressive technical and local SEO structure: schema markup for medical entities, regional landing pages, citation network synchronization, and an automated online booking pipeline with automated notifications.",
     technologies: ["Next.js App Router", "Structured Schema JSON-LD", "Google Cloud APIs", "Twilio / WhatsApp API", "Supabase"],
     deliverables: [
       "Multi-Location Search Architecture",
       "Automated Patient Booking Engine",
       "Google Business Profile Optimization",
       "Automated SMS & WhatsApp Reminders",
-      "Local Citation Network Sync (50+ Hubs)",
+      "Local Citation Network Sync",
     ],
-    testimonial: {
-      quote:
-        "Within 60 days of launching with Rayvix, our clinics became the top-ranked medical centers in the region. Our appointment calendars are now consistently booked weeks in advance.",
-      author: "Dr. Rohini Mehta",
-      role: "Medical Director",
-      company: "Aurora Integrative Health",
+    studioNote: {
+      summary:
+        "Architected as a specialized clinic concept showing how nested Schema.org medical entities and automated booking pipelines establish regional search authority and eliminate appointment friction.",
+      discipline: "Search & Systems Engineering",
     },
   },
   {
     slug: "veloce-creative-studio",
     title: "Véloce Atelier",
-    client: "Véloce International",
+    client: "Studio Concept Architecture",
+    isConcept: true,
     category: "Creative Direction",
     tags: ["Headless E-Commerce", "Art Direction", "Editorial Motion", "Visual Identity"],
-    year: "2025",
-    duration: "6 Weeks",
+    year: "2026",
+    duration: "Concept Prototype",
     heroImage: "/images/case-study-impact.webp",
-    metricHighlight: "$2.4M Direct Sales",
+    metricHighlight: "Headless Storefront API",
     metrics: [
-      { value: "$2.4M", label: "Direct-to-Consumer Sales" },
-      { value: "+185%", label: "Average Order Value (AOV)" },
-      { value: "4.2%", label: "Checkout Conversion Rate" },
-      { value: "< 0.4s", label: "Instant Page Transitions" },
+      { value: "Headless", label: "E-Commerce Architecture" },
+      { value: "Fluid Motion", label: "Kinetic View Transitions" },
+      { value: "Responsive", label: "Fluid Multi-Viewport" },
+      { value: "Custom UI", label: "Tokenized Component System" },
     ],
     tagline: "Bespoke Digital Flagship & Visual Identity for Luxury Goods",
     overview:
-      "Véloce Atelier designs bespoke leather accessories and luxury lifestyle essentials. Rayvix Digital provided end-to-end creative direction, editorial photography art direction, and a high-performance headless digital flagship.",
+      "Véloce Atelier is an artisanal luxury goods concept demonstrating how custom Next.js storefronts paired with Shopify Storefront APIs deliver cinematic, sub-second shopping experiences without the constraints of generic e-commerce templates.",
     challenge:
-      "Off-the-shelf Shopify themes made the brand look identical to mass-market dropshippers. The generic look eroded brand equity, while slow checkout flows dampened conversion rates.",
+      "Off-the-shelf e-commerce themes dilute brand prestige with cookie-cutter layouts, slow JavaScript checkout transitions, and generic typography that fails to justify premium pricing.",
     solution:
-      "We developed an editorial sensory experience combining warm champagne textures, fluid view transitions, and custom product customizers. A headless storefront was architected to pair Shopify’s checkout backend with a lightning-fast custom Next.js frontend.",
+      "We engineered an editorial sensory experience combining warm champagne textures, fluid view transitions, and custom product customizers, pairing headless checkout security with a bespoke Next.js frontend.",
     technologies: ["Next.js 16", "Shopify Storefront API", "Pure CSS Modules", "View Transitions API", "Stripe"],
     deliverables: [
       "Complete Brand Identity & Typography Guidelines",
@@ -149,51 +149,48 @@ export const PORTFOLIO_DATA: CaseStudyDetail[] = [
       "High-Fidelity Campaign Art Direction",
       "One-Click Checkout Optimization",
     ],
-    testimonial: {
-      quote:
-        "The digital flagship Rayvix built for us looks and feels like a luxury salon. Our average order value nearly doubled because our customers instantly recognized the craft and prestige.",
-      author: "Julian Vance",
-      role: "Creative Founder",
-      company: "Véloce Atelier",
+    studioNote: {
+      summary:
+        "Conceived as an editorial digital flagship demonstrating how headless Shopify integrations and custom CSS view transitions outperform mass-market e-commerce themes in luxury market positioning.",
+      discipline: "Creative Direction & Headless Commerce",
     },
   },
   {
     slug: "vanguard-capital-advisors",
     title: "Vanguard Capital Advisors",
-    client: "Vanguard Private Wealth",
+    client: "Studio Concept Architecture",
+    isConcept: true,
     category: "Digital Systems",
     tags: ["Client Portal", "AI Automation", "Role-Based Auth", "Encrypted Systems"],
-    year: "2025",
-    duration: "12 Weeks",
+    year: "2026",
+    duration: "Concept Prototype",
     heroImage: "/images/case-study-partner.webp",
-    metricHighlight: "18 hrs/week Saved per Advisor",
+    metricHighlight: "Role-Based Client Portal",
     metrics: [
-      { value: "18 hrs", label: "Weekly Admin Saved per Advisor" },
-      { value: "100%", label: "Zero Lost Lead Follow-Ups" },
-      { value: "256-bit", label: "End-to-End Encryption" },
-      { value: "12 min", label: "Average Client Onboarding Time" },
+      { value: "Encrypted", label: "Client Vault Architecture" },
+      { value: "Role-Based", label: "Strict Permission Controls" },
+      { value: "AI Pipeline", label: "Document Verification Agent" },
+      { value: "Static Edge", label: "Global Edge Prerender" },
     ],
     tagline: "Autonomous Client Portal & AI-Powered Wealth Telemetry",
     overview:
-      "Vanguard Capital manages bespoke investment portfolios for family offices and institutional investors. Rayvix Digital architected a secure private client portal and automated investor onboarding pipeline.",
+      "Vanguard Capital Advisors is a private wealth management prototype demonstrating how secure, role-based client portals and automated document processing eliminate administrative overhead for high-touch advisory firms.",
     challenge:
-      "Advisors spent 30% of their billable hours answering routine portfolio inquiries, manually sending PDF account summaries, and chasing document signatures across disparate email threads.",
+      "Wealth advisors often spend hours manual handling PDF summaries, chasing document verification across disparate channels, and managing uncoordinated communications.",
     solution:
-      "We engineered a private portal with role-based authentication, real-time portfolio performance charts, and an AI-driven document digestion assistant that handles compliance checks and client document processing autonomously.",
-    technologies: ["Next.js App Router", "TypeScript", "PostgreSQL", "Supabase Auth", "OpenAI Embeddings", "AWS S3 Vault"],
+      "We architected a private portal prototype with role-based authentication, interactive portfolio performance visualizations, and an AI-driven document verification assistant that handles compliance checks autonomously.",
+    technologies: ["Next.js App Router", "TypeScript", "PostgreSQL", "Supabase Auth", "OpenAI Embeddings", "Cloud Storage"],
     deliverables: [
       "Secure Role-Based Client Portal",
       "Automated Investor Onboarding Workflow",
       "Interactive Telemetry & Wealth Dashboards",
       "AI-Powered Document Verification Assistant",
-      "SOC-2 Compliant Cloud Architecture",
+      "Enterprise Cloud Security Architecture",
     ],
-    testimonial: {
-      quote:
-        "Rayvix didn't just build software—they fundamentally transformed our firm's operational efficiency. Our partners now spend their time advising clients instead of doing manual paperwork.",
-      author: "Marcus Sterling",
-      role: "Senior Partner",
-      company: "Vanguard Capital",
+    studioNote: {
+      summary:
+        "Designed as an enterprise private wealth management prototype demonstrating secure role-based portals and AI-assisted client document triage to streamline high-compliance workflows.",
+      discipline: "Secure Systems & Operational AI",
     },
   },
 ];

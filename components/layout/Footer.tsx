@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 import { SITE_CONFIG, NAV_LINKS, SERVICE_CATEGORIES, SOCIAL_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
@@ -9,11 +9,7 @@ import { Button } from "@/components/ui/Button";
 import styles from "./Footer.module.css";
 
 export function Footer() {
-  const [currentYear, setCurrentYear] = useState(2026);
-
-  useEffect(() => {
-    setCurrentYear(new Date().getFullYear());
-  }, []);
+  const currentYear = 2026;
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -108,10 +104,10 @@ export function Footer() {
               Have a project in mind or seeking strategic advice?
             </p>
             <a
-              href="mailto:hello@rayvixdigital.com"
+              href="mailto:inquiry@rayvixdigital.com"
               className={styles.connectEmail}
             >
-              hello@rayvixdigital.com
+              inquiry@rayvixdigital.com
             </a>
 
             <div className={styles.socialRow}>

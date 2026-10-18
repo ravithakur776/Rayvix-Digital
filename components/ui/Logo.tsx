@@ -54,7 +54,6 @@ export function Logo({
           width={monogramDimensions.width}
           height={monogramDimensions.height}
           priority={priority}
-          style={{ width: "auto", height: monogramDimensions.height }}
         />
       </div>
     );
@@ -67,7 +66,6 @@ export function Logo({
           width={stackedDimensions.width}
           height={stackedDimensions.height}
           priority={priority}
-          style={{ width: "auto", height: stackedDimensions.height }}
         />
       </div>
     );
@@ -89,7 +87,6 @@ export function Logo({
             width={monogramDimensions.width}
             height={monogramDimensions.height}
             priority={priority}
-            style={{ width: "auto", height: monogramDimensions.height }}
           />
         </div>
         <div className={styles.textGroup}>

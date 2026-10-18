@@ -50,6 +50,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${playfairDisplay.variable} ${inter.variable}`}
+      data-scroll-behavior="smooth"
     >
       <body>
         {/* Skip to main content — accessibility */}

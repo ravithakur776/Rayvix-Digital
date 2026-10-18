@@ -114,14 +114,14 @@ export const STUDIO_METRICS: StudioMetric[] = [
     detail: "Zero generic site-builder templates or bloated themes; every component is engineered bespoke."
   },
   {
-    value: "99.8%",
-    label: "Core Web Vitals Benchmark",
-    detail: "Relentless focus on sub-second paint times, perfect layout stability, and zero FID."
+    value: "Sub-Second",
+    label: "Target Paint Priority",
+    detail: "Relentless focus on sub-second paint times, layout stability, and zero runtime bloat."
   },
   {
     value: "4",
     label: "Max Client Engagements / Quarter",
-    detail: "We deliberately constrain studio capacity to guarantee obsessive senior-level dedication."
+    detail: "We deliberately constrain studio capacity to maintain focused senior-level dedication."
   },
   {
     value: "0%",

@@ -48,15 +48,10 @@ export default function ContactPage() {
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "Sales & Strategic Inquiries",
-        email: STUDIO_TOUCHPOINTS.email,
-        telephone: STUDIO_TOUCHPOINTS.whatsapp
+        email: STUDIO_TOUCHPOINTS.email
       }
     }
   };
-
-  const whatsappLink = `https://wa.me/${STUDIO_TOUCHPOINTS.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(
-    STUDIO_TOUCHPOINTS.whatsappPrefill
-  )}`;
 
   return (
     <div className={styles.pageWrapper}>
@@ -113,7 +108,7 @@ export default function ContactPage() {
               </div>
               <div className={styles.slaItem}>
                 <span className={styles.slaDot} aria-hidden="true" />
-                <span>Mutual NDA Guaranteed</span>
+                <span>Mutual NDA Available Upon Request</span>
               </div>
             </div>
           </div>
@@ -162,19 +157,17 @@ export default function ContactPage() {
                   </div>
 
                   <div className={styles.touchpointItem}>
-                    <span className={styles.touchpointLabel}>WhatsApp VIP Dispatch</span>
+                    <span className={styles.touchpointLabel}>Scheduled Video Briefing</span>
                     <a
-                      href={whatsappLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href={`mailto:${STUDIO_TOUCHPOINTS.email}?subject=${encodeURIComponent("Request Executive Video Briefing")}`}
                       className={styles.touchpointLink}
                     >
-                      {STUDIO_TOUCHPOINTS.whatsappDisplay}
+                      Request Google Meet / Zoom Briefing
                     </a>
                   </div>
 
                   <div className={styles.touchpointItem}>
-                    <span className={styles.touchpointLabel}>Operating SLA</span>
+                    <span className={styles.touchpointLabel}>Operating Hours</span>
                     <span className={styles.touchpointText}>
                       {STUDIO_TOUCHPOINTS.hours}
                     </span>

@@ -123,14 +123,14 @@ export const RETAINER_TIERS: RetainerTier[] = [
     name: "Platform Performance & Security Guardian",
     price: "₹49,000",
     period: "per month",
-    subtitle: "Continuous sub-second speed, edge security, and search engine compliance.",
-    idealFor: "Platforms requiring 24/7 uptime vigilance and guaranteed Core Web Vitals health.",
+    subtitle: "Continuous speed optimization, edge security, and search engine compliance.",
+    idealFor: "Platforms requiring 24/7 uptime vigilance and rigorous Core Web Vitals health.",
     features: [
       "24/7 edge uptime & Core Web Vitals performance monitoring",
       "Monthly security patching & Next.js ecosystem dependency updates",
       "Quarterly technical SEO audit & broken link resolution",
       "Automated cloud backup verification & disaster recovery standby",
-      "Sub-second SLA for emergency architectural support"
+      "Priority SLA for emergency architectural support"
     ],
     ctaLabel: "Reserve Guardian Retainer",
     ctaHref: "/contact?retainer=guardian"
@@ -194,10 +194,10 @@ export const PRICING_COMPARISON: ComparisonCategory[] = [
       },
       {
         name: "Performance & Core Web Vitals",
-        description: "Sub-second First Contentful Paint and 0 Cumulative Layout Shift guaranteed.",
-        tier1: "98+ Rating",
-        tier2: "99.8% Benchmark",
-        tier3: "Sub-300ms Global Edge"
+        description: "Engineered for optimal First Contentful Paint and strict Cumulative Layout Shift stability.",
+        tier1: "High Performance Tier",
+        tier2: "Optimized Core Web Vitals",
+        tier3: "Global Edge Architecture"
       },
       {
         name: "Zero Plugin Bloat & Pure CSS",

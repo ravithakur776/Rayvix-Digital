@@ -85,7 +85,7 @@ export async function generateStaticParams() {
   const articles = await getPublicationSlugs();
   return articles.map((article) => ({ slug: article.slug }));
 }`,
-          caption: "Deterministic static compilation guarantees sub-50ms edge delivery with zero database latency."
+          caption: "Deterministic static compilation enables sub-50ms edge delivery with zero database latency."
         }
       },
       {

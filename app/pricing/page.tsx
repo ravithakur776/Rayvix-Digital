@@ -96,7 +96,7 @@ export default function PricingPage() {
               </div>
               <div className={styles.safeguardItem}>
                 <span className={styles.safeguardDot} aria-hidden="true" />
-                <span>Fixed Milestone Guarantees</span>
+                <span>Fixed Milestone Deliverables</span>
               </div>
               <div className={styles.safeguardItem}>
                 <span className={styles.safeguardDot} aria-hidden="true" />

@@ -123,10 +123,10 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
           <div className={styles.contactBlock}>
             <span className={styles.contactLabel}>Direct Inquiries</span>
             <a
-              href="mailto:hello@rayvixdigital.com"
+              href="mailto:inquiry@rayvixdigital.com"
               className={styles.contactEmail}
             >
-              hello@rayvixdigital.com
+              inquiry@rayvixdigital.com
             </a>
           </div>
 

@@ -26,7 +26,7 @@ export default function PortfolioPage() {
             <p className={styles.pageLead}>
               We partner with ambitious enterprises to deliver transformative web
               applications, category-defining visual identities, and autonomous systems
-              that drive exponential commercial revenue.
+              that establish defensible market authority and digital distinction.
             </p>
           </div>
         </div>
@@ -48,20 +48,20 @@ export default function PortfolioPage() {
         <div className="container">
           <div className={styles.statsGrid}>
             <div className={styles.statItem}>
-              <span className={styles.statValue}>$50M+</span>
-              <span className={styles.statLabel}>Client Revenue Influenced</span>
+              <span className={styles.statValue}>Bespoke</span>
+              <span className={styles.statLabel}>Custom-Engineered Architecture</span>
             </div>
             <div className={styles.statItem}>
-              <span className={styles.statValue}>+340%</span>
-              <span className={styles.statLabel}>Average Inbound Lead Lift</span>
+              <span className={styles.statValue}>Static Edge</span>
+              <span className={styles.statLabel}>Sub-Second Next.js Delivery</span>
             </div>
             <div className={styles.statItem}>
-              <span className={styles.statValue}>0.38s</span>
-              <span className={styles.statLabel}>Average Global Load Speed</span>
+              <span className={styles.statValue}>Zero Bloat</span>
+              <span className={styles.statLabel}>Pure CSS & Clean Components</span>
             </div>
             <div className={styles.statItem}>
-              <span className={styles.statValue}>100%</span>
-              <span className={styles.statLabel}>On-Time Platform Delivery</span>
+              <span className={styles.statValue}>Full IP</span>
+              <span className={styles.statLabel}>Complete Client Code Ownership</span>
             </div>
           </div>
         </div>

@@ -48,6 +48,7 @@ export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [referenceCode, setReferenceCode] = useState("");
+  const [copied, setCopied] = useState(false);
 
   const validate = (): boolean => {
     const newErrors: FormErrors = {};
@@ -86,14 +87,14 @@ export function ContactForm() {
 
     setIsSubmitting(true);
 
-    // Simulate direct dispatch to studio principal inbox
+    // Compile intake brief into validated reference state
     setTimeout(() => {
       const randomSuffix = Math.random().toString(36).substring(2, 7).toUpperCase();
       const code = `RD-2026-${randomSuffix}`;
       setReferenceCode(code);
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 1200);
+    }, 600);
   };
 
   const handleReset = () => {
@@ -112,12 +113,52 @@ export function ContactForm() {
     setErrors({});
     setIsSubmitted(false);
     setReferenceCode("");
+    setCopied(false);
   };
 
   if (isSubmitted) {
-    const whatsappUrl = `https://wa.me/${STUDIO_TOUCHPOINTS.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(
-      `Hello Rayvix Digital. I submitted inquiry ref ${referenceCode} for ${formData.company}. Looking forward to connecting.`
-    )}`;
+    const selectedService =
+      INQUIRY_SERVICES.find((s) => s.id === formData.service)?.label ||
+      formData.service;
+    const selectedBudget =
+      BUDGET_TIERS.find((b) => b.id === formData.budget)?.range ||
+      formData.budget;
+    const selectedTimeline =
+      TIMELINE_OPTIONS.find((t) => t.id === formData.timeline)?.label ||
+      formData.timeline;
+
+    const formattedBrief = `RAYVIX DIGITAL — STRATEGIC CONSULTATION BRIEF
+Reference Code: ${referenceCode}
+
+CLIENT DETAILS
+• Principal Name: ${formData.fullName}
+• Corporate Email: ${formData.email}
+• Organization / Brand: ${formData.company}
+• Current Website: ${formData.website || "None provided"}
+• Direct Contact: ${formData.phone || "Not specified"}
+
+PROJECT PARAMETERS
+• Primary Focus: ${selectedService}
+• Investment Tier: ${selectedBudget}
+• Target Horizon: ${selectedTimeline}
+
+PROJECT OBJECTIVES & SCOPE:
+${formData.message}
+`;
+
+    const mailtoUrl = `mailto:${STUDIO_TOUCHPOINTS.email}?subject=${encodeURIComponent(
+      `[${referenceCode}] Strategic Consultation: ${formData.company} (${formData.fullName})`
+    )}&body=${encodeURIComponent(formattedBrief)}`;
+
+    const handleCopy = async () => {
+      try {
+        await navigator.clipboard.writeText(formattedBrief);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 3000);
+      } catch {
+        setCopied(true);
+      }
+    };
 
     return (
       <div className={styles.formContainer} aria-live="polite">
@@ -137,10 +178,9 @@ export function ContactForm() {
             </svg>
           </div>
 
-          <h3 className={styles.successTitle}>Consultation Brief Dispatched</h3>
+          <h3 className={styles.successTitle}>Consultation Brief Compiled</h3>
           <p className={styles.successLead}>
-            Thank you, {formData.fullName}. Your inquiry has been routed directly
-            to our studio principals for preliminary architectural evaluation.
+            Thank you, {formData.fullName}. Your strategic intake has been validated and structured for senior studio principal review.
           </p>
 
           <div className={styles.referenceBox}>
@@ -148,12 +188,30 @@ export function ContactForm() {
             <span className={styles.referenceCode}>{referenceCode}</span>
           </div>
 
+          <div className={styles.backendNoticeBox} role="note">
+            <span className={styles.backendNoticeTitle}>Launch Status Note</span>
+            Direct serverless API intake is pending final production webhook deployment (see launch checklist). To ensure your brief reaches our senior team without delay, please dispatch via your default mail client or copy the formatted brief below.
+          </div>
+
+          <div className={styles.briefSummaryBox}>
+            <div className={styles.briefSummaryRow}>
+              <span className={styles.briefSummaryLabel}>Organization:</span>
+              <span className={styles.briefSummaryVal}>{formData.company}</span>
+            </div>
+            <div className={styles.briefSummaryRow}>
+              <span className={styles.briefSummaryLabel}>Focus Area:</span>
+              <span className={styles.briefSummaryVal}>{selectedService}</span>
+            </div>
+            <div className={styles.briefSummaryRow}>
+              <span className={styles.briefSummaryLabel}>Budget & Horizon:</span>
+              <span className={styles.briefSummaryVal}>{selectedBudget} • {selectedTimeline}</span>
+            </div>
+          </div>
+
           <div className={styles.successActions}>
             <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.whatsappVipBtn}
+              href={mailtoUrl}
+              className={styles.emailDispatchBtn}
             >
               <svg
                 width="18"
@@ -166,17 +224,40 @@ export function ContactForm() {
                 strokeLinejoin="round"
                 aria-hidden="true"
               >
-                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
               </svg>
-              Fast-Track via WhatsApp VIP Line
+              Transmit via Email Client ({STUDIO_TOUCHPOINTS.email})
             </a>
+
+            <button
+              type="button"
+              onClick={handleCopy}
+              className={styles.copyBriefBtn}
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+              </svg>
+              {copied ? "✓ Brief Copied to Clipboard" : "Copy Formatted Brief to Clipboard"}
+            </button>
 
             <button
               type="button"
               onClick={handleReset}
               className={styles.resetBtn}
             >
-              Submit an Additional Inquiry
+              Edit Brief or Submit Additional Inquiry
             </button>
           </div>
         </div>

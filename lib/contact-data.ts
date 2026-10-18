@@ -73,38 +73,35 @@ export const TIMELINE_OPTIONS: TimelineOption[] = [
 export const STUDIO_TOUCHPOINTS = {
   email: "inquiry@rayvixdigital.com",
   directEmail: "partnerships@rayvixdigital.com",
-  whatsapp: "+919876543210",
-  whatsappDisplay: "+91 (0) 987 654 3210",
-  whatsappPrefill: "Hello Rayvix Digital. I am interested in initiating a strategic consultation for our brand.",
   hours: "Monday – Friday: 9:00 AM – 7:00 PM IST",
   weekendHours: "Saturday: By Senior Appointment Only",
-  responseTime: "Within 24 business hours guaranteed"
+  responseTime: "Within 24 business hours (Standard Policy)"
 };
 
 export const STUDIO_LOCATIONS: StudioLocation[] = [
   {
     city: "Mathura & Vrindavan",
-    role: "Heritage & Cultural Headquarters",
-    address: "Civil Lines & Raman Reti Corridor, Uttar Pradesh",
-    note: "Studio design center, brand strategy, and heritage roots."
+    role: "Studio Base & Design Operations",
+    address: "Mathura & Vrindavan, Uttar Pradesh, India",
+    note: "Core design operations, brand strategy, and engineering development."
   },
   {
-    city: "Agra",
-    role: "Creative & Production Studio",
-    address: "Fatehabad Road Commercial District, Uttar Pradesh",
-    note: "Visual production, media direction, and regional operations."
+    city: "Agra Region",
+    role: "Regional Creative Engagements",
+    address: "Agra, Uttar Pradesh, India",
+    note: "Visual production, media direction, and regional commercial operations."
   },
   {
     city: "Delhi NCR",
-    role: "Enterprise Systems & Corporate Node",
-    address: "DLF CyberCity / Aerocity, Capital Region",
-    note: "Client consultations, enterprise software advisory, and investor relations."
+    role: "Enterprise Advisory Node",
+    address: "Delhi National Capital Region, India",
+    note: "Strategic advisory, enterprise systems design, and scheduled briefings."
   },
   {
     city: "Global Engagements",
     role: "Remote Worldwide Deployments",
-    address: "Dubai • London • Singapore • New York",
-    note: "Asynchronous communication, timezone-aligned sprints, and global SLA."
+    address: "Worldwide Remote Engagements",
+    note: "Asynchronous communication, timezone-aligned sprints, and dedicated delivery cadences."
   }
 ];
 
@@ -118,7 +115,7 @@ export const CONTACT_FAQS: FAQItem[] = [
   {
     question: "Why do you cap active client engagements at 4 per quarter?",
     answer:
-      "Unlike high-volume digital agencies that juggle dozens of accounts using junior freelancers, Rayvix Digital enforces a strict capacity ceiling. This guarantees that your project is personally architected, coded, and directed by senior studio principals, ensuring flawless execution, zero communication latency, and obsessive quality control.",
+      "Unlike high-volume digital agencies that juggle dozens of accounts using junior freelancers, Rayvix Digital enforces a strict capacity ceiling. This ensures that your project is personally architected, coded, and directed by senior studio principals, ensuring focused execution, zero communication latency, and obsessive quality control.",
     category: "Engagement"
   },
   {
@@ -134,9 +131,9 @@ export const CONTACT_FAQS: FAQItem[] = [
     category: "Engagement"
   },
   {
-    question: "How do you guarantee sub-second performance and 99.8% Core Web Vitals?",
+    question: "How do you architect for sub-second performance and Core Web Vitals?",
     answer:
-      "We engineer exclusively on modern Next.js 16 with static compilation, server components, and pure Vanilla CSS tokenization. By eliminating heavy third-party plugins, jQuery, and bloated CSS utility frameworks, our pages deliver sub-300ms paint times and perfect layout stability scores on Google PageSpeed tests.",
+      "We engineer exclusively on modern Next.js 16 with static compilation, server components, and pure Vanilla CSS tokenization. By eliminating heavy third-party plugins, jQuery, and bloated CSS utility frameworks, our pages achieve rapid paint times and high layout stability scores on Google PageSpeed tests.",
     category: "Engineering"
   },
   {
