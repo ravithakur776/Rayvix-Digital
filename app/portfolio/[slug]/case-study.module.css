@@ -1,0 +1,324 @@
+/* ============================================================
+   RAYVIX DIGITAL — Case Study Detail Dynamic Route Styles
+   ============================================================ */
+
+.heroSection {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-20);
+  background: linear-gradient(
+    180deg,
+    rgba(250, 247, 242, 1) 0%,
+    rgba(245, 240, 232, 0.7) 100%
+  );
+  border-bottom: 1px solid var(--color-border);
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-burgundy);
+  text-decoration: none;
+  margin-bottom: var(--space-8);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.backLink:hover {
+  transform: translateX(-4px);
+  color: var(--color-burgundy-light);
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
+
+.categoryTag {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-champagne-dark);
+  background: rgba(200, 173, 141, 0.15);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+.clientText {
+  font-size: var(--text-sm);
+  color: var(--color-warm-gray);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  font-weight: var(--font-bold);
+  color: var(--color-burgundy);
+  line-height: 1.1;
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--space-4);
+}
+
+.tagline {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  color: var(--color-champagne-dark);
+  font-style: italic;
+  margin-bottom: var(--space-6);
+}
+
+.overview {
+  font-size: var(--text-lg);
+  color: var(--color-warm-gray);
+  line-height: var(--leading-relaxed);
+  max-width: 850px;
+  margin-bottom: var(--space-12);
+}
+
+/* ──────────────────────────────────────────────────
+   METRICS BANNER
+   ────────────────────────────────────────────────── */
+
+.metricsBanner {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8);
+  box-shadow: 0 4px 20px rgba(74, 14, 23, 0.04);
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+.metricItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.metricValue {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: var(--font-bold);
+  color: var(--color-burgundy);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.metricLabel {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-warm-gray);
+}
+
+/* ──────────────────────────────────────────────────
+   HERO SHOWCASE IMAGE
+   ────────────────────────────────────────────────── */
+
+.showcaseSection {
+  padding-block: var(--space-16);
+  background-color: var(--color-bg-primary);
+}
+
+.imageFrame {
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  border: 1px solid rgba(200, 173, 141, 0.35);
+  box-shadow: 0 20px 60px rgba(74, 14, 23, 0.08);
+  background-color: var(--color-white);
+}
+
+.showcaseImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* ──────────────────────────────────────────────────
+   NARRATIVE: CHALLENGE & SOLUTION
+   ────────────────────────────────────────────────── */
+
+.narrativeSection {
+  padding-block: var(--space-20);
+  background-color: var(--color-bg-primary);
+  border-top: 1px solid var(--color-border);
+}
+
+.narrativeGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+}
+
+.narrativeBlock {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-10) var(--space-8);
+}
+
+.blockLabel {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-champagne-dark);
+  margin-bottom: var(--space-3);
+  display: block;
+}
+
+.blockHeading {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  color: var(--color-burgundy);
+  margin-bottom: var(--space-4);
+}
+
+.blockText {
+  font-size: var(--text-base);
+  color: var(--color-warm-gray);
+  line-height: var(--leading-relaxed);
+}
+
+/* ──────────────────────────────────────────────────
+   TECH & DELIVERABLES
+   ────────────────────────────────────────────────── */
+
+.specsSection {
+  padding-block: var(--space-16);
+  background-color: var(--color-bg-primary);
+  border-top: 1px solid var(--color-border);
+}
+
+.specsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+.specCard {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+}
+
+.specTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  color: var(--color-burgundy);
+  margin-bottom: var(--space-4);
+}
+
+.chipsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.chip {
+  background-color: var(--color-ivory-warm);
+  color: var(--color-burgundy);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-wide);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(200, 173, 141, 0.3);
+}
+
+/* ──────────────────────────────────────────────────
+   TESTIMONIAL
+   ────────────────────────────────────────────────── */
+
+.testimonialSection {
+  padding-block: var(--space-20);
+  background-color: var(--color-bg-dark);
+  color: var(--color-ivory);
+}
+
+.testimonialCard {
+  max-width: 800px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.quoteMark {
+  font-family: var(--font-heading);
+  font-size: var(--text-6xl);
+  color: var(--color-champagne);
+  line-height: 1;
+  margin-bottom: var(--space-4);
+}
+
+.quoteText {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.5vw, 1.85rem);
+  font-style: italic;
+  line-height: var(--leading-relaxed);
+  color: var(--color-ivory);
+  margin-bottom: var(--space-8);
+}
+
+.quoteAuthor {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--color-champagne);
+}
+
+.quoteRole {
+  font-size: var(--text-xs);
+  color: var(--color-champagne-light);
+  letter-spacing: var(--tracking-wide);
+  margin-top: 4px;
+}
+
+/* ──────────────────────────────────────────────────
+   BOTTOM INQUIRY BAR
+   ────────────────────────────────────────────────── */
+
+.inquiryBar {
+  padding-block: var(--space-16);
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border);
+}
+
+.inquiryInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .metricsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .narrativeGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .specsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .inquiryInner {
+    flex-direction: row;
+    text-align: left;
+  }
+}

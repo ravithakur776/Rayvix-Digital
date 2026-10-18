@@ -3,6 +3,7 @@ import { Hero } from "@/components/sections/Hero";
 import { CapabilitiesMarquee } from "@/components/sections/CapabilitiesMarquee";
 import { StudioPillars } from "@/components/sections/StudioPillars";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
+import { FeaturedWork } from "@/components/sections/FeaturedWork";
 
 export default function Home() {
   return (
@@ -18,6 +19,9 @@ export default function Home() {
 
       {/* Comprehensive 9-Discipline Capabilities Grid */}
       <ServicesGrid />
+
+      {/* Selected Flagship Case Studies Showcase */}
+      <FeaturedWork />
     </>
   );
 }

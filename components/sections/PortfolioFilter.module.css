@@ -1,0 +1,220 @@
+/* ============================================================
+   RAYVIX DIGITAL — Portfolio Filter & Grid Styles
+   ============================================================ */
+
+.filterContainer {
+  margin-bottom: var(--space-12);
+}
+
+.filterTabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  padding: var(--space-2);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  max-width: max-content;
+  margin-inline: auto;
+  box-shadow: 0 4px 16px rgba(74, 14, 23, 0.04);
+}
+
+.tabButton {
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 8px 18px;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-warm-gray);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+  min-height: 38px;
+}
+
+.tabButton:hover {
+  color: var(--color-burgundy);
+  background-color: rgba(200, 173, 141, 0.12);
+}
+
+.tabButtonActive {
+  background-color: var(--color-burgundy);
+  color: var(--color-ivory);
+  box-shadow: 0 2px 8px rgba(74, 14, 23, 0.2);
+}
+
+.tabButtonActive:hover {
+  background-color: var(--color-burgundy-light);
+  color: var(--color-white);
+}
+
+.tabButton:focus-visible {
+  outline: 2px solid var(--color-champagne);
+  outline-offset: 2px;
+}
+
+/* ──────────────────────────────────────────────────
+   GRID
+   ────────────────────────────────────────────────── */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  margin-bottom: var(--space-16);
+}
+
+.card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--duration-normal) var(--ease-out);
+  box-shadow: 0 8px 24px rgba(74, 14, 23, 0.04);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-champagne);
+  box-shadow: 0 20px 48px rgba(74, 14, 23, 0.1);
+}
+
+.imageWrap {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-ivory-warm);
+  aspect-ratio: 16 / 10;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slower) var(--ease-out);
+}
+
+.card:hover .image {
+  transform: scale(1.03);
+}
+
+.badge {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  background: rgba(74, 14, 23, 0.9);
+  color: var(--color-ivory);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-wide);
+  border: 1px solid rgba(200, 173, 141, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.cardBody {
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.categoryTag {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-champagne-dark);
+}
+
+.year {
+  font-size: var(--text-xs);
+  color: var(--color-warm-gray);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-burgundy);
+  line-height: var(--leading-snug);
+  margin-bottom: var(--space-2);
+}
+
+.tagline {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  color: var(--color-champagne-dark);
+  font-style: italic;
+  margin-bottom: var(--space-4);
+}
+
+.overview {
+  font-size: var(--text-sm);
+  color: var(--color-warm-gray);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-6);
+  flex-grow: 1;
+}
+
+.metricsStrip {
+  display: flex;
+  gap: var(--space-6);
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  margin-bottom: var(--space-6);
+}
+
+.metricValue {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-burgundy);
+  line-height: 1;
+}
+
+.metricLabel {
+  font-size: 11px;
+  color: var(--color-warm-gray);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  margin-top: 4px;
+}
+
+.linkRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-burgundy);
+}
+
+.arrow {
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.card:hover .arrow {
+  transform: translateX(4px);
+  color: var(--color-burgundy-light);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
