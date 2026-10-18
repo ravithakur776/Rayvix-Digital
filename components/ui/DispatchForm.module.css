@@ -1,0 +1,76 @@
+.dispatchForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.dispatchInputWrap {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.dispatchInput {
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(200, 173, 141, 0.3);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-ivory);
+  outline: none;
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.dispatchInput:focus {
+  border-color: var(--color-champagne);
+}
+
+.dispatchInput::placeholder {
+  color: rgba(250, 247, 242, 0.45);
+}
+
+.dispatchSubmitBtn {
+  background-color: var(--color-champagne);
+  color: var(--color-burgundy);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.dispatchSubmitBtn:hover {
+  background-color: var(--color-champagne-light);
+}
+
+.dispatchNote {
+  font-size: var(--text-xs);
+  color: rgba(250, 247, 242, 0.6);
+}
+
+.successMessage {
+  padding: var(--space-3) var(--space-4);
+  background-color: rgba(200, 173, 141, 0.15);
+  border: 1px solid rgba(200, 173, 141, 0.3);
+  border-radius: var(--radius-sm);
+  color: var(--color-champagne-light);
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 768px) {
+  .dispatchInputWrap {
+    flex-direction: column;
+  }
+
+  .dispatchSubmitBtn {
+    width: 100%;
+    padding: var(--space-3);
+  }
+}
