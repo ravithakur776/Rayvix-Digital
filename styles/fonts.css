@@ -1,0 +1,15 @@
+/* ============================================================
+   RAYVIX DIGITAL — Font Declarations
+   Google Fonts loaded via next/font in lib/fonts.ts
+   This file provides fallback @font-face declarations
+   and font-related custom properties.
+   ============================================================ */
+
+/* Font display classes — applied by next/font CSS variables */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}

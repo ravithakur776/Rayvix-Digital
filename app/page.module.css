@@ -1,0 +1,91 @@
+/* ============================================================
+   Homepage — Hero Section Styles
+   ============================================================ */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: var(--space-8);
+  background-color: var(--color-bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle radial gradient backdrop */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  right: -20%;
+  width: 60%;
+  height: 80%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(200, 173, 141, 0.08) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.heroContent {
+  text-align: center;
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+}
+
+.heroTitle {
+  font-size: var(--text-6xl);
+  font-weight: var(--font-bold);
+  color: var(--color-burgundy);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.heroAccent {
+  color: var(--color-champagne);
+  font-style: italic;
+}
+
+.heroDescription {
+  font-size: var(--text-lg);
+  color: var(--color-warm-gray);
+  line-height: var(--leading-relaxed);
+  max-width: 580px;
+  margin-inline: auto;
+}
+
+.heroDivider {
+  width: 60px;
+  height: 1px;
+  background-color: var(--color-champagne);
+  margin: var(--space-10) auto 0;
+}
+
+/* ──────────────────────────────────────────────────
+   Responsive
+   ────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: var(--text-4xl);
+  }
+
+  .heroDescription {
+    font-size: var(--text-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: var(--text-3xl);
+  }
+
+  .hero {
+    padding: var(--space-6);
+  }
+}
