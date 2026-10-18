@@ -4,6 +4,7 @@ import { CapabilitiesMarquee } from "@/components/sections/CapabilitiesMarquee";
 import { StudioPillars } from "@/components/sections/StudioPillars";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { FeaturedWork } from "@/components/sections/FeaturedWork";
+import { StudioManifesto } from "@/components/sections/StudioManifesto";
 
 export default function Home() {
   return (
@@ -22,6 +23,9 @@ export default function Home() {
 
       {/* Selected Flagship Case Studies Showcase */}
       <FeaturedWork />
+
+      {/* Studio Philosophy & Manifesto Transition */}
+      <StudioManifesto />
     </>
   );
 }
