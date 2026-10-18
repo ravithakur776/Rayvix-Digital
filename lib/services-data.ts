@@ -314,7 +314,7 @@ export const SERVICES_DATA: ServiceDetail[] = [
       {
         title: "Google Maps Domination",
         description:
-          "Proven local SEO playbook covering Mathura, Vrindavan, Agra, and regional commercial hubs.",
+          "Proven regional SEO playbook covering Mathura, Vrindavan, and regional commercial markets.",
       },
       {
         title: "Entity & Schema Structuring",

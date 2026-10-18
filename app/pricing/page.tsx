@@ -27,13 +27,16 @@ export const metadata: Metadata = {
     siteName: "Rayvix Digital",
     locale: "en_US",
     type: "website"
+  },
+  alternates: {
+    canonical: "/pricing",
   }
 };
 
 export default function PricingPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "PriceSpecification",
+    "@type": "WebPage",
     name: "Rayvix Digital Studio Investment Architecture",
     description:
       "Fixed-scope milestone investment tiers for bespoke Next.js web applications and digital systems.",
@@ -231,7 +234,7 @@ export default function PricingPage() {
 
               <div className={styles.ctaActions}>
                 <Link href="/contact" className={styles.ctaPrimaryLink}>
-                  Initiate Strategic Consultation
+                  Request a Consultation
                   <svg
                     width="16"
                     height="16"

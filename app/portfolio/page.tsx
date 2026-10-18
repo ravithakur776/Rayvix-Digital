@@ -5,9 +5,21 @@ import { PortfolioFilter } from "@/components/sections/PortfolioFilter";
 import styles from "./portfolio.module.css";
 
 export const metadata: Metadata = {
-  title: "Case Studies & Selected Works",
+  title: "Studio Concept Architecture & Systems Demonstrations | Rayvix Digital",
   description:
-    "Explore proven client outcomes and digital architecture case studies from Rayvix Digital spanning luxury real estate, healthcare, e-commerce, and financial systems.",
+    "Explore studio concept prototypes and architectural demonstrations from Rayvix Digital spanning bespoke Next.js systems, healthcare search architecture, luxury e-commerce, and client portal engineering.",
+  openGraph: {
+    title: "Studio Concept Architecture & Systems Demonstrations | Rayvix Digital",
+    description:
+      "Explore studio concept prototypes and architectural demonstrations from Rayvix Digital spanning bespoke Next.js systems, healthcare search architecture, luxury e-commerce, and client portal engineering.",
+    url: "https://rayvixdigital.com/portfolio",
+    siteName: "Rayvix Digital",
+    locale: "en_US",
+    type: "website",
+  },
+  alternates: {
+    canonical: "/portfolio",
+  },
 };
 
 export default function PortfolioPage() {
@@ -19,14 +31,15 @@ export default function PortfolioPage() {
       <section className={styles.pageHeader} aria-label="Portfolio Header">
         <div className="container">
           <div className={styles.headerContent}>
-            <span className={styles.pageLabel}>Selected Works & Case Studies</span>
+            <span className={styles.pageLabel}>Studio Concept Architecture & Prototypes</span>
             <h1 className={styles.pageTitle}>
-              Case Studies in Digital Distinction & Scale.
+              Architectural Prototypes & Systems Demonstrations.
             </h1>
             <p className={styles.pageLead}>
-              We partner with ambitious enterprises to deliver transformative web
-              applications, category-defining visual identities, and autonomous systems
-              that establish defensible market authority and digital distinction.
+              A curated collection of studio concept architectures demonstrating our
+              engineering standards, editorial design systems, and headless technology
+              integrations. Each project represents an end-to-end prototype designed to
+              solve real-world industry challenges.
             </p>
           </div>
         </div>
@@ -35,7 +48,7 @@ export default function PortfolioPage() {
       {/* ──────────────────────────────────────────────────
           INTERACTIVE CASE STUDIES GALLERY
           ────────────────────────────────────────────────── */}
-      <section className={styles.gallerySection} aria-label="Case Studies Gallery">
+      <section className={styles.gallerySection} aria-label="Concept Architecture Gallery">
         <div className="container">
           <PortfolioFilter initialProjects={PORTFOLIO_DATA} />
         </div>
@@ -44,7 +57,7 @@ export default function PortfolioPage() {
       {/* ──────────────────────────────────────────────────
           IMPACT STATS STRIP
           ────────────────────────────────────────────────── */}
-      <section className={styles.statsSection} aria-label="Cumulative Client Impact">
+      <section className={styles.statsSection} aria-label="Studio Engineering Standards">
         <div className="container">
           <div className={styles.statsGrid}>
             <div className={styles.statItem}>

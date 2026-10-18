@@ -47,68 +47,89 @@ export function PortfolioFilter({ initialProjects }: PortfolioFilterProps) {
         ))}
       </div>
 
-      {/* Projects Grid */}
-      <div className={styles.grid}>
-        {filteredProjects.map((project) => (
-          <Link
-            key={project.slug}
-            href={`/portfolio/${project.slug}`}
-            className={styles.card}
-            style={{ textDecoration: "none", color: "inherit" }}
+      {/* Projects Grid or Empty State */}
+      {filteredProjects.length === 0 ? (
+        <div className={styles.emptyState} role="status" aria-live="polite">
+          <div className={styles.emptyIcon} aria-hidden="true">✦</div>
+          <h3 className={styles.emptyTitle}>Demonstrations in Development</h3>
+          <p className={styles.emptyText}>
+            We are actively modeling bespoke studio concept prototypes for {activeCategory}. In the meantime, explore our active concept systems across other disciplines.
+          </p>
+          <button
+            type="button"
+            className={styles.resetFilterButton}
+            onClick={() => setActiveCategory("All")}
           >
-            <div className={styles.imageWrap}>
-              <Image
-                src={project.heroImage}
-                alt={`${project.title} — ${project.tagline}`}
-                width={900}
-                height={600}
-                className={styles.image}
-                sizes="(max-width: 768px) 100vw, 600px"
-              />
-              <div className={styles.badge}>{project.metricHighlight}</div>
-            </div>
-
-            <div className={styles.cardBody}>
-              <div className={styles.metaRow}>
-                <span className={styles.categoryTag}>{project.category}</span>
-                <span className={styles.year}>{project.year}</span>
+            View All Concept Projects
+          </button>
+        </div>
+      ) : (
+        <div className={styles.grid}>
+          {filteredProjects.map((project) => (
+            <Link
+              key={project.slug}
+              href={`/portfolio/${project.slug}`}
+              className={styles.card}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <div className={styles.imageWrap}>
+                <Image
+                  src={project.heroImage}
+                  alt={`${project.title} — ${project.tagline}`}
+                  width={900}
+                  height={600}
+                  className={styles.image}
+                  sizes="(max-width: 768px) 100vw, 600px"
+                />
+                <div className={styles.conceptPill}>Concept Prototype</div>
+                <div className={styles.badge}>{project.metricHighlight}</div>
               </div>
 
-              <h3 className={styles.title}>{project.title}</h3>
-              <p className={styles.tagline}>{project.tagline}</p>
-              <p className={styles.overview}>{project.overview}</p>
-
-              <div className={styles.metricsStrip}>
-                {project.metrics.slice(0, 2).map((m) => (
-                  <div key={m.label}>
-                    <div className={styles.metricValue}>{m.value}</div>
-                    <div className={styles.metricLabel}>{m.label}</div>
+              <div className={styles.cardBody}>
+                <div className={styles.metaRow}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
+                    <span className={styles.conceptBadge}>Studio Concept</span>
+                    <span className={styles.categoryTag}>{project.category}</span>
                   </div>
-                ))}
-              </div>
+                  <span className={styles.year}>{project.year}</span>
+                </div>
 
-              <div className={styles.linkRow}>
-                <span>Explore Case Study</span>
-                <svg
-                  className={styles.arrow}
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
+                <h3 className={styles.title}>{project.title}</h3>
+                <p className={styles.tagline}>{project.tagline}</p>
+                <p className={styles.overview}>{project.overview}</p>
+
+                <div className={styles.metricsStrip}>
+                  {project.metrics.slice(0, 2).map((m) => (
+                    <div key={m.label}>
+                      <div className={styles.metricValue}>{m.value}</div>
+                      <div className={styles.metricLabel}>{m.label}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className={styles.linkRow}>
+                  <span>Explore Concept Architecture</span>
+                  <svg
+                    className={styles.arrow}
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </div>
               </div>
-            </div>
-          </Link>
-        ))}
-      </div>
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

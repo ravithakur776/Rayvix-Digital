@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
+import { getCaseStudyBySlug } from "@/lib/portfolio-data";
 import {
   INQUIRY_SERVICES,
   BUDGET_TIERS,
-  TIMELINE_OPTIONS,
-  STUDIO_TOUCHPOINTS
+  TIMELINE_OPTIONS
 } from "@/lib/contact-data";
 import styles from "./ContactForm.module.css";
 
@@ -20,6 +21,8 @@ interface FormState {
   phone: string;
   message: string;
   consent: boolean;
+  project?: string;
+  retainer?: string;
 }
 
 interface FormErrors {
@@ -30,10 +33,110 @@ interface FormErrors {
   consent?: string;
 }
 
-export function ContactForm() {
+interface ContactFormInnerProps {
+  initialService: string;
+  initialBudget: string;
+  initialProject: string;
+  initialRetainer: string;
+}
+
+const SERVICE_SLUG_MAP: Record<string, string> = {
+  "web-development": "web-systems",
+  "digital-systems": "web-systems",
+  "creative-direction": "brand-identity",
+  "brand-identity": "brand-identity",
+  "seo": "search-growth",
+  "digital-marketing": "search-growth",
+  "content-strategy": "search-growth",
+  "social-media": "search-growth",
+  "ai-automation": "ai-automation",
+  "full-partnership": "full-partnership",
+};
+
+const TIER_PARAM_MAP: Record<string, string> = {
+  foundational: "tier-1",
+  flagship: "tier-2",
+  enterprise: "tier-3",
+  "tier-1": "tier-1",
+  "tier-2": "tier-2",
+  "tier-3": "tier-3",
+  "tier-4": "tier-4",
+};
+
+const RETAINER_PARAM_MAP: Record<string, { budgetId: string; label: string }> = {
+  guardian: { budgetId: "tier-4", label: "Platform Performance & Security Guardian Retainer" },
+  "retainer-guardian": { budgetId: "tier-4", label: "Platform Performance & Security Guardian Retainer" },
+  sprint: { budgetId: "tier-4", label: "Continuous Growth & Feature Sprints Retainer" },
+  "retainer-sprint": { budgetId: "tier-4", label: "Continuous Growth & Feature Sprints Retainer" },
+};
+
+function resolveInitialService(serviceParam: string | null, projectParam: string | null): string {
+  if (serviceParam) {
+    if (INQUIRY_SERVICES.some((s) => s.id === serviceParam)) {
+      return serviceParam;
+    }
+    if (SERVICE_SLUG_MAP[serviceParam]) {
+      return SERVICE_SLUG_MAP[serviceParam];
+    }
+  }
+
+  if (projectParam) {
+    const proj = getCaseStudyBySlug(projectParam);
+    if (proj) {
+      if (proj.category === "Web Development" || proj.category === "Digital Systems") {
+        return "web-systems";
+      }
+      if (proj.category === "Creative Direction" || proj.category === "Brand Identity") {
+        return "brand-identity";
+      }
+      if (proj.category === "SEO & Marketing") {
+        return "search-growth";
+      }
+      if (proj.category === "AI Automation") {
+        return "ai-automation";
+      }
+    }
+  }
+
+  return INQUIRY_SERVICES[0].id;
+}
+
+function resolveInitialBudget(tierParam: string | null, retainerParam: string | null): string {
+  if (retainerParam && RETAINER_PARAM_MAP[retainerParam]) {
+    return RETAINER_PARAM_MAP[retainerParam].budgetId;
+  }
+  if (tierParam && TIER_PARAM_MAP[tierParam]) {
+    return TIER_PARAM_MAP[tierParam];
+  }
+  return BUDGET_TIERS[1].id;
+}
+
+function resolveInitialProject(projectParam: string | null): string {
+  if (projectParam) {
+    const proj = getCaseStudyBySlug(projectParam);
+    if (proj) {
+      return proj.slug;
+    }
+  }
+  return "";
+}
+
+function resolveInitialRetainer(retainerParam: string | null): string {
+  if (retainerParam && RETAINER_PARAM_MAP[retainerParam]) {
+    return RETAINER_PARAM_MAP[retainerParam].label;
+  }
+  return "";
+}
+
+function ContactFormInner({
+  initialService,
+  initialBudget,
+  initialProject,
+  initialRetainer,
+}: ContactFormInnerProps) {
   const [formData, setFormData] = useState<FormState>({
-    service: INQUIRY_SERVICES[0].id,
-    budget: BUDGET_TIERS[1].id,
+    service: initialService,
+    budget: initialBudget,
     timeline: TIMELINE_OPTIONS[1].id,
     fullName: "",
     email: "",
@@ -41,7 +144,9 @@ export function ContactForm() {
     website: "",
     phone: "",
     message: "",
-    consent: false
+    consent: false,
+    project: initialProject,
+    retainer: initialRetainer,
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
@@ -49,6 +154,8 @@ export function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [referenceCode, setReferenceCode] = useState("");
   const [copied, setCopied] = useState(false);
+
+  const referencedProject = formData.project ? getCaseStudyBySlug(formData.project) : null;
 
   const validate = (): boolean => {
     const newErrors: FormErrors = {};
@@ -87,7 +194,6 @@ export function ContactForm() {
 
     setIsSubmitting(true);
 
-    // Compile intake brief into validated reference state
     setTimeout(() => {
       const randomSuffix = Math.random().toString(36).substring(2, 7).toUpperCase();
       const code = `RD-2026-${randomSuffix}`;
@@ -108,7 +214,9 @@ export function ContactForm() {
       website: "",
       phone: "",
       message: "",
-      consent: false
+      consent: false,
+      project: "",
+      retainer: "",
     });
     setErrors({});
     setIsSubmitted(false);
@@ -126,6 +234,9 @@ export function ContactForm() {
     const selectedTimeline =
       TIMELINE_OPTIONS.find((t) => t.id === formData.timeline)?.label ||
       formData.timeline;
+    const selectedProjectName = formData.project
+      ? getCaseStudyBySlug(formData.project)?.title || formData.project
+      : "";
 
     const formattedBrief = `RAYVIX DIGITAL — STRATEGIC CONSULTATION BRIEF
 Reference Code: ${referenceCode}
@@ -141,13 +252,19 @@ PROJECT PARAMETERS
 • Primary Focus: ${selectedService}
 • Investment Tier: ${selectedBudget}
 • Target Horizon: ${selectedTimeline}
-
+${selectedProjectName ? `• Referenced Architecture: ${selectedProjectName} (Studio Concept)\n` : ""}${
+      formData.retainer ? `• Retainer Model: ${formData.retainer}\n` : ""
+    }
 PROJECT OBJECTIVES & SCOPE:
 ${formData.message}
 `;
 
-    const mailtoUrl = `mailto:${STUDIO_TOUCHPOINTS.email}?subject=${encodeURIComponent(
-      `[${referenceCode}] Strategic Consultation: ${formData.company} (${formData.fullName})`
+    const mailtoSubject = `[${referenceCode}] Strategic Consultation: ${formData.company} (${formData.fullName})${
+      selectedProjectName ? ` — Ref: ${selectedProjectName}` : formData.retainer ? ` — ${formData.retainer}` : ""
+    }`;
+
+    const mailtoUrl = `mailto:contact.rayvix@gmail.com?subject=${encodeURIComponent(
+      mailtoSubject
     )}&body=${encodeURIComponent(formattedBrief)}`;
 
     const handleCopy = async () => {
@@ -206,6 +323,18 @@ ${formData.message}
               <span className={styles.briefSummaryLabel}>Budget & Horizon:</span>
               <span className={styles.briefSummaryVal}>{selectedBudget} • {selectedTimeline}</span>
             </div>
+            {selectedProjectName && (
+              <div className={styles.briefSummaryRow}>
+                <span className={styles.briefSummaryLabel}>Referenced Project:</span>
+                <span className={styles.briefSummaryVal}>{selectedProjectName} (Concept)</span>
+              </div>
+            )}
+            {formData.retainer && (
+              <div className={styles.briefSummaryRow}>
+                <span className={styles.briefSummaryLabel}>Retainer Model:</span>
+                <span className={styles.briefSummaryVal}>{formData.retainer}</span>
+              </div>
+            )}
           </div>
 
           <div className={styles.successActions}>
@@ -227,7 +356,7 @@ ${formData.message}
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                 <polyline points="22,6 12,13 2,6" />
               </svg>
-              Transmit via Email Client ({STUDIO_TOUCHPOINTS.email})
+              Transmit via Email Client
             </a>
 
             <button
@@ -276,7 +405,49 @@ ${formData.message}
         </p>
       </div>
 
+      {referencedProject && (
+        <div className={styles.contextNotice} role="status">
+          <div className={styles.contextNoticeContent}>
+            <span className={styles.contextNoticeTag}>Referenced Architecture</span>
+            <span className={styles.contextNoticeText}>
+              {referencedProject.title} ({referencedProject.category})
+            </span>
+          </div>
+          <button
+            type="button"
+            className={styles.contextNoticeClear}
+            onClick={() => setFormData((prev) => ({ ...prev, project: "" }))}
+            title="Clear referenced project"
+            aria-label="Clear referenced project"
+          >
+            ✕
+          </button>
+        </div>
+      )}
+
+      {formData.retainer && (
+        <div className={styles.contextNotice} role="status">
+          <div className={styles.contextNoticeContent}>
+            <span className={styles.contextNoticeTag}>Selected Retainer</span>
+            <span className={styles.contextNoticeText}>{formData.retainer}</span>
+          </div>
+          <button
+            type="button"
+            className={styles.contextNoticeClear}
+            onClick={() => setFormData((prev) => ({ ...prev, retainer: "" }))}
+            title="Clear selected retainer"
+            aria-label="Clear selected retainer"
+          >
+            ✕
+          </button>
+        </div>
+      )}
+
       <form onSubmit={handleSubmit} noValidate>
+        {/* Hidden inputs to preserve context */}
+        <input type="hidden" name="project" value={formData.project || ""} />
+        <input type="hidden" name="retainer" value={formData.retainer || ""} />
+
         {/* 1. Primary Discipline Selection */}
         <div className={styles.fieldGroup}>
           <label className={styles.fieldLabel}>
@@ -364,16 +535,21 @@ ${formData.message}
 
         {/* 4. Contact & Organization Details */}
         <div className={styles.fieldGroup}>
-          <label className={styles.fieldLabel}>
+          <div className={styles.fieldLabel}>
             4. Leadership & Organization
-            <span className={styles.requiredStar}>*</span>
-          </label>
+            <span className={styles.requiredStar} aria-hidden="true">*</span>
+          </div>
 
           <div className={styles.inputRow}>
             <div className={styles.inputControl}>
+              <label htmlFor="contact-full-name" className={styles.inputLabel}>
+                Full Name <span className={styles.requiredStar} aria-hidden="true">*</span>
+              </label>
               <input
+                id="contact-full-name"
+                name="fullName"
                 type="text"
-                placeholder="Full Name *"
+                placeholder="e.g. Eleanor Vance"
                 value={formData.fullName}
                 onChange={(e) =>
                   setFormData({ ...formData, fullName: e.target.value })
@@ -383,16 +559,24 @@ ${formData.message}
                 }`}
                 aria-required="true"
                 aria-invalid={!!errors.fullName}
+                aria-describedby={errors.fullName ? "contact-full-name-error" : undefined}
               />
               {errors.fullName && (
-                <span className={styles.errorMessage}>{errors.fullName}</span>
+                <span id="contact-full-name-error" className={styles.errorMessage} role="alert">
+                  {errors.fullName}
+                </span>
               )}
             </div>
 
             <div className={styles.inputControl}>
+              <label htmlFor="contact-email" className={styles.inputLabel}>
+                Work Email <span className={styles.requiredStar} aria-hidden="true">*</span>
+              </label>
               <input
+                id="contact-email"
+                name="email"
                 type="email"
-                placeholder="Work Email *"
+                placeholder="e.g. name@company.com"
                 value={formData.email}
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
@@ -402,18 +586,26 @@ ${formData.message}
                 }`}
                 aria-required="true"
                 aria-invalid={!!errors.email}
+                aria-describedby={errors.email ? "contact-email-error" : undefined}
               />
               {errors.email && (
-                <span className={styles.errorMessage}>{errors.email}</span>
+                <span id="contact-email-error" className={styles.errorMessage} role="alert">
+                  {errors.email}
+                </span>
               )}
             </div>
           </div>
 
           <div className={styles.inputRow}>
             <div className={styles.inputControl}>
+              <label htmlFor="contact-company" className={styles.inputLabel}>
+                Company / Organization <span className={styles.requiredStar} aria-hidden="true">*</span>
+              </label>
               <input
+                id="contact-company"
+                name="company"
                 type="text"
-                placeholder="Company / Organization *"
+                placeholder="e.g. Lumina Global"
                 value={formData.company}
                 onChange={(e) =>
                   setFormData({ ...formData, company: e.target.value })
@@ -423,16 +615,24 @@ ${formData.message}
                 }`}
                 aria-required="true"
                 aria-invalid={!!errors.company}
+                aria-describedby={errors.company ? "contact-company-error" : undefined}
               />
               {errors.company && (
-                <span className={styles.errorMessage}>{errors.company}</span>
+                <span id="contact-company-error" className={styles.errorMessage} role="alert">
+                  {errors.company}
+                </span>
               )}
             </div>
 
             <div className={styles.inputControl}>
+              <label htmlFor="contact-website" className={styles.inputLabel}>
+                Current Website URL <span className={styles.fieldHint}>(Optional)</span>
+              </label>
               <input
+                id="contact-website"
+                name="website"
                 type="url"
-                placeholder="Current Website URL (optional)"
+                placeholder="https://yourcompany.com"
                 value={formData.website}
                 onChange={(e) =>
                   setFormData({ ...formData, website: e.target.value })
@@ -444,9 +644,14 @@ ${formData.message}
 
           <div className={styles.inputRow}>
             <div className={styles.inputControl}>
+              <label htmlFor="contact-phone" className={styles.inputLabel}>
+                Phone or WhatsApp <span className={styles.fieldHint}>(Optional)</span>
+              </label>
               <input
+                id="contact-phone"
+                name="phone"
                 type="tel"
-                placeholder="Phone or WhatsApp (optional, for urgent dispatch)"
+                placeholder="+91 98765 43210"
                 value={formData.phone}
                 onChange={(e) =>
                   setFormData({ ...formData, phone: e.target.value })
@@ -459,13 +664,15 @@ ${formData.message}
 
         {/* 5. Project Vision & Goals */}
         <div className={styles.fieldGroup}>
-          <label className={styles.fieldLabel}>
+          <label htmlFor="contact-message" className={styles.fieldLabel}>
             5. Project Scope & Strategic Objectives
-            <span className={styles.requiredStar}>*</span>
+            <span className={styles.requiredStar} aria-hidden="true">*</span>
             <span className={styles.fieldHint}>(What challenges or growth milestones are you solving for?)</span>
           </label>
           <div className={styles.inputControl}>
             <textarea
+              id="contact-message"
+              name="message"
               placeholder="Outline your vision, current bottlenecks, desired timeline, or key technical requirements..."
               value={formData.message}
               onChange={(e) =>
@@ -476,9 +683,12 @@ ${formData.message}
               }`}
               aria-required="true"
               aria-invalid={!!errors.message}
+              aria-describedby={errors.message ? "contact-message-error" : undefined}
             />
             {errors.message && (
-              <span className={styles.errorMessage}>{errors.message}</span>
+              <span id="contact-message-error" className={styles.errorMessage} role="alert">
+                {errors.message}
+              </span>
             )}
           </div>
         </div>
@@ -540,5 +750,48 @@ ${formData.message}
         </button>
       </form>
     </div>
+  );
+}
+
+function ContactFormWrapper() {
+  const searchParams = useSearchParams();
+  const tierParam = searchParams.get("tier");
+  const retainerParam = searchParams.get("retainer");
+  const serviceParam = searchParams.get("service");
+  const projectParam = searchParams.get("project");
+
+  const initialService = resolveInitialService(serviceParam, projectParam);
+  const initialBudget = resolveInitialBudget(tierParam, retainerParam);
+  const initialProject = resolveInitialProject(projectParam);
+  const initialRetainer = resolveInitialRetainer(retainerParam);
+
+  const formKey = `${initialService}-${initialBudget}-${initialProject}-${initialRetainer}`;
+
+  return (
+    <ContactFormInner
+      key={formKey}
+      initialService={initialService}
+      initialBudget={initialBudget}
+      initialProject={initialProject}
+      initialRetainer={initialRetainer}
+    />
+  );
+}
+
+export function ContactForm() {
+  return (
+    <Suspense
+      fallback={
+        <div className={styles.formContainer} aria-busy="true">
+          <div className={styles.formHeader}>
+            <span className={styles.formEyebrow}>Direct Studio Intake</span>
+            <h2 className={styles.formTitle}>Initiate Strategic Consultation</h2>
+            <p className={styles.formSubtitle}>Loading consultation brief...</p>
+          </div>
+        </div>
+      }
+    >
+      <ContactFormWrapper />
+    </Suspense>
   );
 }

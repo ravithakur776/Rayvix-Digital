@@ -139,5 +139,5 @@ export const STUDIO_REGIONAL_HERITAGE = {
     "From these historic crossroads of trade, art, and timeless monumentality, we bring an uncompromising dedication to permanence and enduring quality. Where conventional digital agencies rush disposable solutions, we build digital monuments designed to withstand the volatile shifts of technology.",
     "Today, our studio partners with ambitious founders, visionary clinics, capital advisors, and luxury brands across Mumbai, Delhi, Bengaluru, Dubai, London, and North America—proving that profound regional craftsmanship and world-class software engineering belong on the global stage."
   ],
-  locations: ["Mathura", "Vrindavan", "Agra", "National Capital Region", "Global Clients"]
+  locations: ["Mathura–Vrindavan (Regional Base)", "Remote Worldwide Delivery"]
 };

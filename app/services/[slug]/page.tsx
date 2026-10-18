@@ -34,6 +34,13 @@ export async function generateMetadata({
     openGraph: {
       title: `${service.title} | Rayvix Digital`,
       description: service.description,
+      url: `https://rayvixdigital.com/services/${service.slug}`,
+      siteName: "Rayvix Digital",
+      locale: "en_US",
+      type: "website",
+    },
+    alternates: {
+      canonical: `/services/${service.slug}`,
     },
   };
 }

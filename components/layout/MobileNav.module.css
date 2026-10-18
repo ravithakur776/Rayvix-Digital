@@ -184,3 +184,18 @@
   border-color: var(--color-burgundy);
   transform: translateY(-2px);
 }
+
+.socialIconDisabled {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-ivory);
+  border: 1px dashed var(--color-light-gray);
+  color: var(--color-warm-gray);
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}

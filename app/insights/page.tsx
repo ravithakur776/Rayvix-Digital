@@ -26,6 +26,9 @@ export const metadata: Metadata = {
     siteName: "Rayvix Digital",
     locale: "en_US",
     type: "website"
+  },
+  alternates: {
+    canonical: "/insights",
   }
 };
 

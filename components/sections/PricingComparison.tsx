@@ -24,7 +24,7 @@ export function PricingComparison() {
             </th>
             <th scope="col" className={styles.thTier}>
               <span className={styles.tierHeadTitle}>Foundational</span>
-              <span className={styles.tierHeadPrice}>₹2,49,000</span>
+              <span className={styles.tierHeadPrice}>Custom Quote</span>
             </th>
             <th
               scope="col"
@@ -32,11 +32,11 @@ export function PricingComparison() {
             >
               <span className={styles.popularBadgeSm}>Flagship</span>
               <span className={styles.tierHeadTitle}>Flagship Platform</span>
-              <span className={styles.tierHeadPrice}>₹5,49,000</span>
+              <span className={styles.tierHeadPrice}>Custom Quote</span>
             </th>
             <th scope="col" className={styles.thTier}>
               <span className={styles.tierHeadTitle}>Enterprise</span>
-              <span className={styles.tierHeadPrice}>₹12,99,000</span>
+              <span className={styles.tierHeadPrice}>Custom Quote</span>
             </th>
           </tr>
         </thead>

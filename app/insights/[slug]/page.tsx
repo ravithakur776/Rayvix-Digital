@@ -42,6 +42,9 @@ export async function generateMetadata({
       type: "article",
       publishedTime: article.publishedDate,
       authors: [article.author.name]
+    },
+    alternates: {
+      canonical: `/insights/${article.slug}`,
     }
   };
 }

@@ -57,10 +57,10 @@ export const INQUIRY_SERVICES: ServiceOption[] = [
 ];
 
 export const BUDGET_TIERS: BudgetTier[] = [
-  { id: "tier-1", range: "₹2.5L – ₹5L", label: "Foundational Studio Build" },
-  { id: "tier-2", range: "₹5L – ₹12L", label: "Flagship Custom Platform" },
-  { id: "tier-3", range: "₹12L – ₹25L", label: "Enterprise System & Brand Architecture" },
-  { id: "tier-4", range: "₹25L+", label: "Comprehensive Multi-Discipline Partnership" }
+  { id: "tier-1", range: "Bespoke Scope", label: "Foundational Studio Build" },
+  { id: "tier-2", range: "Custom Platform", label: "Flagship Architecture" },
+  { id: "tier-3", range: "Enterprise System", label: "Comprehensive Architecture" },
+  { id: "tier-4", range: "Tailored Retainer", label: "Ongoing Growth Partnership" }
 ];
 
 export const TIMELINE_OPTIONS: TimelineOption[] = [
@@ -71,8 +71,10 @@ export const TIMELINE_OPTIONS: TimelineOption[] = [
 ];
 
 export const STUDIO_TOUCHPOINTS = {
-  email: "inquiry@rayvixdigital.com",
-  directEmail: "partnerships@rayvixdigital.com",
+  email: "contact.rayvix@gmail.com",
+  phone: "+91 9528395833",
+  phoneRaw: "+919528395833",
+  whatsappUrl: "https://wa.me/919528395833",
   hours: "Monday – Friday: 9:00 AM – 7:00 PM IST",
   weekendHours: "Saturday: By Senior Appointment Only",
   responseTime: "Within 24 business hours (Standard Policy)"
@@ -80,28 +82,16 @@ export const STUDIO_TOUCHPOINTS = {
 
 export const STUDIO_LOCATIONS: StudioLocation[] = [
   {
-    city: "Mathura & Vrindavan",
-    role: "Studio Base & Design Operations",
-    address: "Mathura & Vrindavan, Uttar Pradesh, India",
-    note: "Core design operations, brand strategy, and engineering development."
+    city: "Mathura–Vrindavan",
+    role: "Regional Studio Base",
+    address: "Mathura–Vrindavan, Uttar Pradesh, India",
+    note: "Regional base for brand strategy, software systems engineering, and core studio operations."
   },
   {
-    city: "Agra Region",
-    role: "Regional Creative Engagements",
-    address: "Agra, Uttar Pradesh, India",
-    note: "Visual production, media direction, and regional commercial operations."
-  },
-  {
-    city: "Delhi NCR",
-    role: "Enterprise Advisory Node",
-    address: "Delhi National Capital Region, India",
-    note: "Strategic advisory, enterprise systems design, and scheduled briefings."
-  },
-  {
-    city: "Global Engagements",
-    role: "Remote Worldwide Deployments",
-    address: "Worldwide Remote Engagements",
-    note: "Asynchronous communication, timezone-aligned sprints, and dedicated delivery cadences."
+    city: "National & Global Markets",
+    role: "Remote Worldwide Delivery",
+    address: "Serving Ambitious Brands Remotely Worldwide",
+    note: "Seamless digital delivery across time zones through structured asynchronous sprints and senior principal reviews."
   }
 ];
 

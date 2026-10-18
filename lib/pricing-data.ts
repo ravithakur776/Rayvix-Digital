@@ -46,8 +46,8 @@ export const PRICING_TIERS: PricingTier[] = [
   {
     id: "foundational",
     name: "Foundational Platform & Brand",
-    price: "₹2,49,000",
-    period: "one-time",
+    price: "Custom Quote",
+    period: "Bespoke Scope",
     currency: "INR",
     subtitle: "Essential digital authority and bespoke software for high-conviction brands.",
     idealFor: "Boutique practices, luxury clinics, and emerging ventures establishing a benchmark presence.",
@@ -62,7 +62,7 @@ export const PRICING_TIERS: PricingTier[] = [
       "100% intellectual property & source code transfer",
       "14 days post-deployment architectural warranty"
     ],
-    ctaLabel: "Initiate Foundational Build",
+    ctaLabel: "Request a Consultation",
     ctaHref: "/contact?tier=foundational"
   },
   {
@@ -70,8 +70,8 @@ export const PRICING_TIERS: PricingTier[] = [
     name: "Flagship Custom Platform",
     badge: "Most Selected by Leaders",
     isPopular: true,
-    price: "₹5,49,000",
-    period: "one-time",
+    price: "Custom Quote",
+    period: "Bespoke Scope",
     currency: "INR",
     subtitle: "Complete digital dominance with advanced headless integrations and conversion engineering.",
     idealFor: "Scaling enterprises, established multi-location practices, and category-leading brands.",
@@ -88,14 +88,14 @@ export const PRICING_TIERS: PricingTier[] = [
       "100% complete source code transfer & production deployment",
       "30 days dedicated post-launch senior support & warranty"
     ],
-    ctaLabel: "Initiate Flagship Build",
+    ctaLabel: "Request a Consultation",
     ctaHref: "/contact?tier=flagship"
   },
   {
     id: "enterprise",
     name: "Enterprise Systems & AI Transformation",
-    price: "₹12,99,000",
-    period: "one-time",
+    price: "Custom Quote",
+    period: "Bespoke Scope",
     currency: "INR",
     subtitle: "Bespoke full-stack software, custom AI automation workflows, and global infrastructure.",
     idealFor: "Market leaders, venture-backed organizations, and high-volume commercial operations.",
@@ -112,7 +112,7 @@ export const PRICING_TIERS: PricingTier[] = [
       "100% intellectual property transfer with full repository rights",
       "60 days post-launch priority architectural warranty"
     ],
-    ctaLabel: "Initiate Enterprise Engagement",
+    ctaLabel: "Request a Consultation",
     ctaHref: "/contact?tier=enterprise"
   }
 ];
@@ -121,8 +121,8 @@ export const RETAINER_TIERS: RetainerTier[] = [
   {
     id: "retainer-guardian",
     name: "Platform Performance & Security Guardian",
-    price: "₹49,000",
-    period: "per month",
+    price: "Custom Retainer",
+    period: "Monthly Engagement",
     subtitle: "Continuous speed optimization, edge security, and search engine compliance.",
     idealFor: "Platforms requiring 24/7 uptime vigilance and rigorous Core Web Vitals health.",
     features: [
@@ -132,14 +132,14 @@ export const RETAINER_TIERS: RetainerTier[] = [
       "Automated cloud backup verification & disaster recovery standby",
       "Priority SLA for emergency architectural support"
     ],
-    ctaLabel: "Reserve Guardian Retainer",
+    ctaLabel: "Request a Consultation",
     ctaHref: "/contact?retainer=guardian"
   },
   {
     id: "retainer-sprint",
     name: "Continuous Growth & Feature Sprints",
-    price: "₹1,29,000",
-    period: "per month",
+    price: "Custom Retainer",
+    period: "Monthly Engagement",
     subtitle: "Dedicated monthly senior engineering and conversion optimization sprints.",
     idealFor: "Ambitious businesses treating their platform as a continuously evolving commercial asset.",
     features: [
@@ -150,7 +150,7 @@ export const RETAINER_TIERS: RetainerTier[] = [
       "Bi-weekly sprint planning call with studio principals",
       "Priority response time within 4 business hours"
     ],
-    ctaLabel: "Reserve Sprint Retainer",
+    ctaLabel: "Request a Consultation",
     ctaHref: "/contact?retainer=sprint"
   }
 ];

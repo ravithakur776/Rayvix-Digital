@@ -30,11 +30,18 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${project.title} — Case Study`,
+    title: `${project.title} — Studio Concept Architecture | Rayvix Digital`,
     description: project.overview,
     openGraph: {
-      title: `${project.title} | Rayvix Digital Case Study`,
+      title: `${project.title} | Studio Concept Architecture`,
       description: project.overview,
+      url: `https://rayvixdigital.com/portfolio/${project.slug}`,
+      siteName: "Rayvix Digital",
+      locale: "en_US",
+      type: "website",
+    },
+    alternates: {
+      canonical: `/portfolio/${project.slug}`,
     },
   };
 }
@@ -69,14 +76,14 @@ export default async function CaseStudyPage({ params }: PageProps) {
               <line x1="19" y1="12" x2="5" y2="12" />
               <polyline points="12 19 5 12 12 5" />
             </svg>
-            <span>Back to All Case Studies</span>
+            <span>Back to All Concept Projects</span>
           </Link>
 
           <div className={styles.metaRow}>
             <span className={styles.categoryTag}>{project.category}</span>
-            <span className={styles.clientText}>Client: {project.client}</span>
+            <span className={styles.clientText}>Status: {project.client}</span>
             <span className={styles.clientText}>• Year: {project.year}</span>
-            <span className={styles.clientText}>• Timeline: {project.duration}</span>
+            <span className={styles.clientText}>• Horizon: {project.duration}</span>
           </div>
 
           <h1 className={styles.title}>{project.title}</h1>
@@ -213,7 +220,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
               </svg>
             }
           >
-            Start Your Project
+            Request a Consultation
           </Button>
         </div>
       </div>

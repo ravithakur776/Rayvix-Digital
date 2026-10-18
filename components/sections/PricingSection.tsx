@@ -67,7 +67,7 @@ export function PricingSection() {
               <div className={styles.priceBox}>
                 <div className={styles.priceWrapper}>
                   <span className={styles.priceAmount}>{tier.price}</span>
-                  <span className={styles.pricePeriod}>/ {tier.period}</span>
+                  <span className={styles.pricePeriod}>• {tier.period}</span>
                 </div>
                 <span className={styles.priceSubtext}>
                   Fixed milestone-based scope • 0% hidden fees
@@ -137,7 +137,7 @@ export function PricingSection() {
               <div className={styles.priceBox}>
                 <div className={styles.priceWrapper}>
                   <span className={styles.priceAmount}>{ret.price}</span>
-                  <span className={styles.pricePeriod}>/ {ret.period}</span>
+                  <span className={styles.pricePeriod}>• {ret.period}</span>
                 </div>
                 <span className={styles.priceSubtext}>
                   Cancel or adjust with 30 days notice • Dedicated principal time

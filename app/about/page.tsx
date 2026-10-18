@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     siteName: "Rayvix Digital",
     locale: "en_US",
     type: "website"
+  },
+  alternates: {
+    canonical: "/about",
   }
 };
 
@@ -356,7 +359,7 @@ export default function AboutPage() {
                   Permanent Craftsmanship
                 </div>
                 <div className={styles.heritageOverlaySubtitle}>
-                  From Mathura, Vrindavan, & Agra to Global Enterprise Scale
+                  Regional Base: Mathura–Vrindavan • Serving Ambitious Brands Remotely Worldwide
                 </div>
               </div>
             </div>

@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: "/terms",
+  },
 };
 
 export default function TermsOfServicePage() {
@@ -61,10 +64,10 @@ export default function TermsOfServicePage() {
               4. Inquiries & Legal Notices
             </h2>
             <p>
-              For legal inquiries or questions regarding our terms of service, please reach out to our studio principals at{" "}
-              <a href="mailto:inquiry@rayvixdigital.com" style={{ color: "var(--color-burgundy)", fontWeight: 500 }}>
-                inquiry@rayvixdigital.com
-              </a>.
+              For legal inquiries or questions regarding our terms of service, please reach out to our studio principals via our{" "}
+              <Link href="/contact" style={{ color: "var(--color-burgundy)", fontWeight: 500 }}>
+                Strategic Consultation intake
+              </Link>.
             </p>
           </section>
         </div>

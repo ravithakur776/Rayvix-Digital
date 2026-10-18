@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: "/privacy",
+  },
 };
 
 export default function PrivacyPolicyPage() {
@@ -61,10 +64,10 @@ export default function PrivacyPolicyPage() {
               4. Contact Regarding Privacy
             </h2>
             <p>
-              If you have any questions regarding our privacy practices or wish to request the deletion of your consultation brief, please contact our studio principals directly at{" "}
-              <a href="mailto:inquiry@rayvixdigital.com" style={{ color: "var(--color-burgundy)", fontWeight: 500 }}>
-                inquiry@rayvixdigital.com
-              </a>.
+              If you have any questions regarding our privacy practices or wish to request the deletion of your consultation brief, please contact our studio principals directly via our{" "}
+              <Link href="/contact" style={{ color: "var(--color-burgundy)", fontWeight: 500 }}>
+                Strategic Consultation intake
+              </Link>.
             </p>
           </section>
         </div>

@@ -30,6 +30,9 @@ export const metadata: Metadata = {
     siteName: "Rayvix Digital",
     locale: "en_US",
     type: "website"
+  },
+  alternates: {
+    canonical: "/contact",
   }
 };
 
@@ -48,7 +51,7 @@ export default function ContactPage() {
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "Sales & Strategic Inquiries",
-        email: STUDIO_TOUCHPOINTS.email
+        url: "https://rayvixdigital.com/contact"
       }
     }
   };
@@ -137,7 +140,7 @@ export default function ContactPage() {
 
                 <div className={styles.touchpointList}>
                   <div className={styles.touchpointItem}>
-                    <span className={styles.touchpointLabel}>General Inquiries</span>
+                    <span className={styles.touchpointLabel}>Direct Studio Email</span>
                     <a
                       href={`mailto:${STUDIO_TOUCHPOINTS.email}`}
                       className={styles.touchpointLink}
@@ -147,23 +150,32 @@ export default function ContactPage() {
                   </div>
 
                   <div className={styles.touchpointItem}>
-                    <span className={styles.touchpointLabel}>Executive Partnerships</span>
+                    <span className={styles.touchpointLabel}>Direct Telephone</span>
                     <a
-                      href={`mailto:${STUDIO_TOUCHPOINTS.directEmail}`}
+                      href={`tel:${STUDIO_TOUCHPOINTS.phoneRaw}`}
                       className={styles.touchpointLink}
                     >
-                      {STUDIO_TOUCHPOINTS.directEmail}
+                      {STUDIO_TOUCHPOINTS.phone}
+                    </a>
+                  </div>
+
+                  <div className={styles.touchpointItem}>
+                    <span className={styles.touchpointLabel}>WhatsApp Consultation</span>
+                    <a
+                      href={STUDIO_TOUCHPOINTS.whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.touchpointLink}
+                    >
+                      {STUDIO_TOUCHPOINTS.phone} (Direct WhatsApp) ↗
                     </a>
                   </div>
 
                   <div className={styles.touchpointItem}>
                     <span className={styles.touchpointLabel}>Scheduled Video Briefing</span>
-                    <a
-                      href={`mailto:${STUDIO_TOUCHPOINTS.email}?subject=${encodeURIComponent("Request Executive Video Briefing")}`}
-                      className={styles.touchpointLink}
-                    >
-                      Request Google Meet / Zoom Briefing
-                    </a>
+                    <span className={styles.touchpointText}>
+                      Google Meet / Zoom Briefings Scheduled Following Brief Review
+                    </span>
                   </div>
 
                   <div className={styles.touchpointItem}>
@@ -173,6 +185,13 @@ export default function ContactPage() {
                     </span>
                     <span className={styles.touchpointText} style={{ opacity: 0.75, fontSize: "0.8rem" }}>
                       {STUDIO_TOUCHPOINTS.weekendHours}
+                    </span>
+                  </div>
+
+                  <div className={styles.touchpointItem}>
+                    <span className={styles.touchpointLabel}>Response Time</span>
+                    <span className={styles.touchpointText}>
+                      {STUDIO_TOUCHPOINTS.responseTime}
                     </span>
                   </div>
                 </div>

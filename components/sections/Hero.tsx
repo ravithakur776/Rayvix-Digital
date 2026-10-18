@@ -54,7 +54,7 @@ export function Hero() {
               </svg>
             }
           >
-            Book a Strategy Call
+            Request a Consultation
           </Button>
         </div>
 
@@ -110,7 +110,7 @@ export function Hero() {
 
           <div className={styles.locationBar}>
             <span className={styles.locationPin} aria-hidden="true">📍</span>
-            <span>Studio Hubs: Mathura • Vrindavan • Agra • Serving High-Growth Brands Worldwide</span>
+            <span>Regional Base: Mathura–Vrindavan • Serving Ambitious Brands Remotely Worldwide</span>
           </div>
         </div>
       </div>

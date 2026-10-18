@@ -63,7 +63,7 @@ export function Header() {
           <div className={styles.actions}>
             <div className={styles.desktopCta}>
               <Button href="/contact" variant="primary" size="sm">
-                Book a Call
+                Request a Consultation
               </Button>
             </div>
 

@@ -43,7 +43,8 @@ export const SERVICE_CATEGORIES = [
 ] as const;
 
 export const SOCIAL_LINKS = {
-  instagram: "#",
-  linkedin: "#",
-  twitter: "#",
+  instagram: "https://www.instagram.com/rayvixdigital/",
+  facebook: "https://www.facebook.com/rayvixdigital",
+  linkedin: "https://www.linkedin.com/company/rayvix-digital/",
+  github: "https://github.com/ravithakur776",
 } as const;

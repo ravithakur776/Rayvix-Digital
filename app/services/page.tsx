@@ -8,6 +8,18 @@ export const metadata: Metadata = {
   title: "Capabilities & Services",
   description:
     "Explore Rayvix Digital's 9 core disciplines spanning bespoke web development, creative direction, brand identity, digital marketing, AI automation, and cloud systems.",
+  openGraph: {
+    title: "Capabilities & Services | Rayvix Digital",
+    description:
+      "Explore Rayvix Digital's 9 core disciplines spanning bespoke web development, creative direction, brand identity, digital marketing, AI automation, and cloud systems.",
+    url: "https://rayvixdigital.com/services",
+    siteName: "Rayvix Digital",
+    locale: "en_US",
+    type: "website",
+  },
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 const PROCESS_STEPS = [
@@ -57,7 +69,7 @@ export default function ServicesPage() {
             </p>
             <div className={styles.headerActions}>
               <Button href="/contact" variant="primary" size="lg">
-                Book a Strategy Call
+                Request a Consultation
               </Button>
               <Button href="#catalog" variant="outline" size="lg">
                 Browse All Disciplines

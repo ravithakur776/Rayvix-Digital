@@ -253,6 +253,21 @@
   outline-offset: 2px;
 }
 
+.socialButtonDisabled {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  background-color: rgba(250, 247, 242, 0.03);
+  border: 1px dashed rgba(200, 173, 141, 0.15);
+  color: rgba(250, 247, 242, 0.35);
+  opacity: 0.6;
+  cursor: default;
+  pointer-events: none;
+}
+
 /* ──────────────────────────────────────────────────
    BOTTOM BAR
    ────────────────────────────────────────────────── */
