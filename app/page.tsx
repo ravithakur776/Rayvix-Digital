@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { Button } from "@/components/ui/Button";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -14,6 +16,14 @@ export default function Home() {
           A premium creative, web development, marketing and digital systems
           studio — crafting brands that command attention and drive results.
         </p>
+        <div className={styles.heroActions}>
+          <Button href="/portfolio" variant="primary" size="lg">
+            Explore Our Work
+          </Button>
+          <Button href="/contact" variant="outline" size="lg">
+            Book a Strategy Call
+          </Button>
+        </div>
         <div className={styles.heroDivider} />
       </div>
     </section>

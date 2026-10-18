@@ -1,0 +1,168 @@
+/* ============================================================
+   RAYVIX DIGITAL — Header Styles
+   Sticky header with luxury glassmorphism and responsive navigation.
+   ============================================================ */
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: var(--z-header);
+  background-color: rgba(250, 247, 242, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(200, 173, 141, 0.2);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+/* Scrolled elevation */
+.headerScrolled {
+  background-color: rgba(250, 247, 242, 0.96);
+  border-bottom-color: rgba(200, 173, 141, 0.35);
+  box-shadow: 0 4px 20px rgba(74, 14, 23, 0.05);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  transition: height var(--duration-normal) var(--ease-out);
+}
+
+.headerScrolled .inner {
+  height: 68px;
+}
+
+/* Desktop Nav */
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.navLink {
+  position: relative;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-charcoal);
+  text-decoration: none;
+  padding: var(--space-2) 0;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-champagne);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.navLink:hover {
+  color: var(--color-burgundy);
+}
+
+.navLink:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navLinkActive {
+  color: var(--color-burgundy);
+  font-weight: var(--font-semibold);
+}
+
+.navLinkActive::after {
+  transform: scaleX(1);
+  background-color: var(--color-burgundy);
+}
+
+/* Actions Right */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.desktopCta {
+  display: none;
+}
+
+/* Mobile Hamburger Button */
+.hamburger {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: 1px solid rgba(74, 14, 23, 0.1);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.hamburger:hover {
+  background: rgba(74, 14, 23, 0.04);
+  border-color: var(--color-burgundy);
+}
+
+.hamburger:focus-visible {
+  outline: 2px solid var(--color-champagne);
+  outline-offset: 2px;
+}
+
+.hamburgerLine {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-burgundy);
+  border-radius: var(--radius-full);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.hamburgerLine + .hamburgerLine {
+  margin-top: 5px;
+}
+
+.hamburgerOpen .hamburgerLine:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburgerOpen .hamburgerLine:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-4px);
+}
+
+.hamburgerOpen .hamburgerLine:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ──────────────────────────────────────────────────
+   RESPONSIVE
+   ────────────────────────────────────────────────── */
+
+@media (min-width: 1024px) {
+  .desktopNav {
+    display: flex;
+  }
+
+  .desktopCta {
+    display: inline-flex;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}

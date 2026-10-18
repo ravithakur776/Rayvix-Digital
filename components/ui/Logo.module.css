@@ -1,0 +1,99 @@
+/* ============================================================
+   RAYVIX DIGITAL — Logo Styles
+   ============================================================ */
+
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.logoLink:hover {
+  opacity: 0.88;
+}
+
+.logoLink:focus-visible {
+  outline: 2px solid var(--color-champagne);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.logoWrapper {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Horizontal lockup: monogram on left, typography on right */
+.horizontalLockup {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.monogram {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+}
+
+.brandName {
+  font-family: var(--font-heading);
+  font-weight: var(--font-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  line-height: 1.1;
+  transition: color var(--duration-normal) var(--ease-out);
+}
+
+.brandTag {
+  font-family: var(--font-body);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  font-size: 0.55em;
+  opacity: 0.85;
+  margin-top: 3px;
+  transition: color var(--duration-normal) var(--ease-out);
+}
+
+/* Light variant */
+.variantLight .brandName {
+  color: var(--color-burgundy);
+}
+
+.variantLight .brandTag {
+  color: var(--color-burgundy-light);
+}
+
+/* Dark variant */
+.variantDark .brandName {
+  color: var(--color-ivory);
+}
+
+.variantDark .brandTag {
+  color: var(--color-champagne);
+}
+
+/* Sizing */
+.sizeSm .brandName {
+  font-size: 1.125rem;
+}
+
+.sizeMd .brandName {
+  font-size: 1.375rem;
+}
+
+.sizeLg .brandName {
+  font-size: 1.75rem;
+}

@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { playfairDisplay, inter } from "@/lib/fonts";
 import { SITE_CONFIG } from "@/lib/constants";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import "@/styles/globals.css";
 import "@/styles/fonts.css";
 
@@ -11,6 +13,10 @@ export const metadata: Metadata = {
   },
   description: SITE_CONFIG.description,
   metadataBase: new URL(SITE_CONFIG.url),
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/icons/apple-touch-icon.png",
+  },
   openGraph: {
     type: "website",
     locale: SITE_CONFIG.locale,
@@ -35,7 +41,11 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html
       lang="en"
@@ -47,11 +57,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to main content
         </a>
 
-        {/* Header will be added in Step 3 */}
+        {/* Global Sticky Header */}
+        <Header />
 
+        {/* Main Content Area */}
         <main id="main-content">{children}</main>
 
-        {/* Footer will be added in Step 3 */}
+        {/* Global Editorial Footer */}
+        <Footer />
       </body>
     </html>
   );
