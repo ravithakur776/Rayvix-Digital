@@ -1,0 +1,441 @@
+/* ============================================================
+   PRICING PAGE — Luxury Editorial Styles
+   ============================================================ */
+
+.pageWrapper {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  overflow-x: hidden;
+}
+
+/* ────────────────────────────────────────────────────────────
+   1. HERO SECTION
+   ──────────────────────────────────────────────────────────── */
+.heroSection {
+  position: relative;
+  background-color: var(--color-burgundy);
+  color: var(--color-ivory);
+  padding: var(--space-24) 0 var(--space-20);
+  overflow: hidden;
+  border-bottom: 1px solid rgba(200, 173, 141, 0.2);
+}
+
+.heroGlow {
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(200, 173, 141, 0.15) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+  position: relative;
+  z-index: 2;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: rgba(250, 247, 242, 0.65);
+  margin-bottom: var(--space-8);
+}
+
+.breadcrumbLink {
+  color: rgba(250, 247, 242, 0.65);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.breadcrumbLink:hover {
+  color: var(--color-champagne);
+}
+
+.breadcrumbSeparator {
+  color: rgba(200, 173, 141, 0.4);
+}
+
+.breadcrumbCurrent {
+  color: var(--color-champagne);
+}
+
+.heroContent {
+  max-width: 880px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background-color: rgba(200, 173, 141, 0.12);
+  border: 1px solid rgba(200, 173, 141, 0.3);
+  border-radius: var(--radius-full);
+  color: var(--color-champagne);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  margin-bottom: var(--space-6);
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-champagne);
+  box-shadow: 0 0 8px var(--color-champagne);
+}
+
+.heroTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-5xl);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-tight);
+  color: var(--color-ivory);
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--space-6);
+}
+
+.heroHighlight {
+  color: var(--color-champagne);
+  font-style: italic;
+}
+
+.heroLead {
+  font-size: var(--text-xl);
+  line-height: var(--leading-relaxed);
+  color: rgba(250, 247, 242, 0.85);
+  font-weight: var(--font-light);
+  max-width: 780px;
+  margin-bottom: var(--space-8);
+}
+
+.safeguardsStrip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-3) var(--space-6);
+  background-color: rgba(54, 10, 17, 0.8);
+  border: 1px solid rgba(200, 173, 141, 0.3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+  color: var(--color-champagne-light);
+  letter-spacing: var(--tracking-wide);
+  flex-wrap: wrap;
+}
+
+.safeguardItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.safeguardDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-champagne);
+}
+
+/* ────────────────────────────────────────────────────────────
+   2. PRICING GRID SECTION
+   ──────────────────────────────────────────────────────────── */
+.pricingSection {
+  padding: var(--space-24) 0;
+  background-color: var(--color-bg-primary);
+}
+
+/* ────────────────────────────────────────────────────────────
+   3. COMPARISON SECTION
+   ──────────────────────────────────────────────────────────── */
+.comparisonSection {
+  padding: var(--space-24) 0;
+  background-color: var(--color-ivory-warm);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--space-16);
+}
+
+.sectionEyebrow {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-champagne-dark);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-3);
+  display: block;
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+  color: var(--color-burgundy);
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--space-4);
+}
+
+.sectionLead {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-warm-gray);
+}
+
+/* ────────────────────────────────────────────────────────────
+   4. PHILOSOPHY NARRATIVE CARDS
+   ──────────────────────────────────────────────────────────── */
+.philosophySection {
+  padding: var(--space-24) 0;
+  background-color: var(--color-bg-primary);
+}
+
+.philosophyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+.philosophyCard {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.philosophyNumber {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  color: var(--color-champagne-dark);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-3);
+}
+
+.philosophyTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  color: var(--color-burgundy);
+  margin-bottom: var(--space-3);
+}
+
+.philosophyText {
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-charcoal);
+  opacity: 0.85;
+}
+
+/* ────────────────────────────────────────────────────────────
+   5. PRICING FAQ SECTION
+   ──────────────────────────────────────────────────────────── */
+.faqSection {
+  padding: var(--space-24) 0;
+  background-color: var(--color-ivory-warm);
+  border-top: 1px solid var(--color-border);
+}
+
+.faqWrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ────────────────────────────────────────────────────────────
+   6. CALL TO ACTION BANNER
+   ──────────────────────────────────────────────────────────── */
+.ctaSection {
+  padding: var(--space-24) 0;
+  background-color: var(--color-bg-primary);
+}
+
+.ctaCard {
+  background-color: var(--color-burgundy);
+  color: var(--color-ivory);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-16) var(--space-12);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(200, 173, 141, 0.3);
+  box-shadow: var(--shadow-xl);
+}
+
+.ctaCard::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(200, 173, 141, 0.15) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 2;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.ctaBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background-color: rgba(200, 173, 141, 0.12);
+  border: 1px solid rgba(200, 173, 141, 0.3);
+  border-radius: var(--radius-full);
+  color: var(--color-champagne);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  margin-bottom: var(--space-6);
+}
+
+.ctaTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+  color: var(--color-ivory);
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--space-4);
+}
+
+.ctaLead {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: rgba(250, 247, 242, 0.85);
+  margin-bottom: var(--space-8);
+  font-weight: var(--font-light);
+}
+
+.ctaActions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.ctaPrimaryLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background-color: var(--color-champagne);
+  color: var(--color-burgundy);
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.ctaPrimaryLink:hover {
+  background-color: var(--color-champagne-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(200, 173, 141, 0.3);
+}
+
+.ctaSecondaryLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background-color: transparent;
+  color: var(--color-ivory);
+  padding: var(--space-4) var(--space-8);
+  border: 1px solid rgba(200, 173, 141, 0.4);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.ctaSecondaryLink:hover {
+  background-color: rgba(200, 173, 141, 0.1);
+  border-color: var(--color-champagne);
+  color: var(--color-champagne);
+}
+
+/* ────────────────────────────────────────────────────────────
+   RESPONSIVE STYLES
+   ──────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .heroTitle {
+    font-size: var(--text-4xl);
+  }
+
+  .philosophyGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: var(--space-16) 0;
+  }
+
+  .heroTitle {
+    font-size: var(--text-3xl);
+  }
+
+  .heroLead {
+    font-size: var(--text-base);
+  }
+
+  .safeguardsStrip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .sectionTitle {
+    font-size: var(--text-3xl);
+  }
+
+  .ctaCard {
+    padding: var(--space-10) var(--space-6);
+  }
+
+  .ctaTitle {
+    font-size: var(--text-2xl);
+  }
+
+  .ctaActions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ctaPrimaryLink,
+  .ctaSecondaryLink {
+    width: 100%;
+    justify-content: center;
+  }
+}

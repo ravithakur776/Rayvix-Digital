@@ -1,0 +1,167 @@
+/* ============================================================
+   PRICING COMPARISON TABLE — Luxury Comparison Matrix
+   ============================================================ */
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-md);
+  margin-top: var(--space-8);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 820px;
+}
+
+/* Table Header */
+.tableHead {
+  background-color: var(--color-ivory);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.thFeature {
+  padding: var(--space-6) var(--space-8);
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  color: var(--color-burgundy);
+  width: 38%;
+}
+
+.thTier {
+  padding: var(--space-6) var(--space-4);
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  color: var(--color-burgundy);
+  width: 20%;
+  border-left: 1px solid var(--color-border);
+}
+
+.thTierPopular {
+  background-color: rgba(200, 173, 141, 0.12);
+  border-left: 2px solid var(--color-burgundy);
+  border-right: 2px solid var(--color-burgundy);
+  position: relative;
+}
+
+.tierHeadTitle {
+  display: block;
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-1);
+}
+
+.tierHeadPrice {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-warm-gray);
+  font-weight: var(--font-regular);
+}
+
+.popularBadgeSm {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  background-color: var(--color-burgundy);
+  color: var(--color-champagne);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-1);
+}
+
+/* Category Section Rows */
+.categoryRow {
+  background-color: var(--color-ivory-warm);
+  border-top: 2px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.categoryCell {
+  padding: var(--space-4) var(--space-8);
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--color-burgundy);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* Feature Rows */
+.featureRow {
+  border-bottom: 1px solid rgba(200, 173, 141, 0.15);
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.featureRow:hover {
+  background-color: rgba(250, 247, 242, 0.7);
+}
+
+.featureCell {
+  padding: var(--space-4) var(--space-8);
+  vertical-align: middle;
+}
+
+.featureName {
+  display: block;
+  font-weight: var(--font-medium);
+  color: var(--color-charcoal);
+  font-size: var(--text-sm);
+  margin-bottom: 2px;
+}
+
+.featureDesc {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--color-warm-gray);
+  line-height: var(--leading-normal);
+}
+
+.valueCell {
+  padding: var(--space-4);
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--color-charcoal);
+  border-left: 1px solid var(--color-border);
+  vertical-align: middle;
+  font-weight: var(--font-medium);
+}
+
+.valueCellPopular {
+  background-color: rgba(200, 173, 141, 0.05);
+  border-left: 2px solid var(--color-burgundy);
+  border-right: 2px solid var(--color-burgundy);
+}
+
+.checkIcon {
+  color: var(--color-success);
+  font-size: var(--text-base);
+  font-weight: bold;
+}
+
+.dashIcon {
+  color: var(--color-warm-gray);
+  font-size: var(--text-base);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .thFeature {
+    padding: var(--space-4);
+    width: 32%;
+  }
+
+  .featureCell {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .categoryCell {
+    padding: var(--space-3) var(--space-4);
+  }
+}
