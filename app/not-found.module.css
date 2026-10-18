@@ -1,0 +1,187 @@
+/* ============================================================
+   404 NOT FOUND — Luxury Editorial 404 Experience
+   ============================================================ */
+
+.notFoundWrapper {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-burgundy);
+  color: var(--color-ivory);
+  padding: var(--space-24) var(--content-padding);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(200, 173, 141, 0.15) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.content {
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background-color: rgba(200, 173, 141, 0.12);
+  border: 1px solid rgba(200, 173, 141, 0.3);
+  border-radius: var(--radius-full);
+  color: var(--color-champagne);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  margin-bottom: var(--space-6);
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-champagne);
+  box-shadow: 0 0 8px var(--color-champagne);
+}
+
+.errorNumber {
+  font-family: var(--font-heading);
+  font-size: var(--text-7xl);
+  font-weight: var(--font-bold);
+  color: var(--color-champagne);
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--space-4);
+  opacity: 0.9;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+  color: var(--color-ivory);
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--space-4);
+}
+
+.lead {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: rgba(250, 247, 242, 0.85);
+  max-width: 650px;
+  margin: 0 auto var(--space-12);
+  font-weight: var(--font-light);
+}
+
+/* 4 Recovery Cards */
+.pathwaysGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-12);
+}
+
+.pathwayCard {
+  background-color: rgba(54, 10, 17, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(200, 173, 141, 0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-4);
+  text-decoration: none;
+  color: var(--color-ivory);
+  text-align: left;
+  transition: transform var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) var(--ease-out);
+  display: flex;
+  flex-direction: column;
+}
+
+.pathwayCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-champagne);
+  background-color: rgba(74, 14, 23, 0.8);
+}
+
+.pathwayNumber {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-champagne);
+  margin-bottom: var(--space-2);
+}
+
+.pathwayTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  color: var(--color-ivory);
+  margin-bottom: var(--space-1);
+}
+
+.pathwayDesc {
+  font-size: var(--text-xs);
+  color: rgba(250, 247, 242, 0.7);
+  line-height: var(--leading-normal);
+  margin-top: auto;
+}
+
+.ctaHomeLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background-color: var(--color-champagne);
+  color: var(--color-burgundy);
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.ctaHomeLink:hover {
+  background-color: var(--color-champagne-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(200, 173, 141, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .pathwaysGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .errorNumber {
+    font-size: var(--text-5xl);
+  }
+
+  .title {
+    font-size: var(--text-2xl);
+  }
+
+  .lead {
+    font-size: var(--text-base);
+  }
+
+  .pathwaysGrid {
+    grid-template-columns: 1fr;
+  }
+}
