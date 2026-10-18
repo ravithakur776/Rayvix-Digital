@@ -1,0 +1,69 @@
+/* ============================================================
+   RAYVIX DIGITAL — Capabilities Ribbon / Marquee Styles
+   Continuous luxury ticker showcasing studio disciplines.
+   ============================================================ */
+
+.marqueeSection {
+  background-color: var(--color-burgundy);
+  color: var(--color-ivory);
+  padding-block: var(--space-4);
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid rgba(200, 173, 141, 0.25);
+  border-bottom: 1px solid rgba(200, 173, 141, 0.25);
+  user-select: none;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 35s linear infinite;
+}
+
+.marqueeSection:hover .track {
+  animation-play-state: paused;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  flex-shrink: 0;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-ivory);
+  white-space: nowrap;
+}
+
+.separator {
+  color: var(--color-champagne);
+  font-size: 0.85em;
+  opacity: 0.8;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation-duration: 90s;
+  }
+}

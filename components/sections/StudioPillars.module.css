@@ -1,0 +1,225 @@
+/* ============================================================
+   RAYVIX DIGITAL — Studio Pillars Section Styles
+   3-Pillar Architectural Framework & Device Showcase.
+   ============================================================ */
+
+.pillarsSection {
+  padding-block: var(--space-24);
+  background-color: var(--color-bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.headerBlock {
+  max-width: 800px;
+  margin-inline: auto;
+  text-align: center;
+  margin-bottom: var(--space-16);
+}
+
+.sectionLabel {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-champagne-dark);
+  margin-bottom: var(--space-3);
+}
+
+.sectionHeading {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: var(--font-bold);
+  color: var(--color-burgundy);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--space-6);
+  text-wrap: balance;
+}
+
+.sectionLead {
+  font-size: var(--text-lg);
+  color: var(--color-warm-gray);
+  line-height: var(--leading-relaxed);
+  text-wrap: pretty;
+}
+
+/* ──────────────────────────────────────────────────
+   PILLAR CARDS GRID
+   ────────────────────────────────────────────────── */
+
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  margin-bottom: var(--space-20);
+}
+
+.pillarCard {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all var(--duration-normal) var(--ease-out);
+  box-shadow: 0 4px 16px rgba(74, 14, 23, 0.03);
+}
+
+.pillarCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-champagne);
+  box-shadow: 0 16px 36px rgba(74, 14, 23, 0.08);
+}
+
+.pillarCardTop {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pillarNumber {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  color: var(--color-burgundy);
+  line-height: 1;
+}
+
+.pillarTag {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-champagne-dark);
+}
+
+.pillarTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-burgundy);
+  line-height: var(--leading-snug);
+  margin-bottom: var(--space-4);
+}
+
+.pillarDesc {
+  font-size: var(--text-base);
+  color: var(--color-warm-gray);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-8);
+  flex-grow: 1;
+}
+
+.featureChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: auto;
+}
+
+.featureChip {
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  color: var(--color-burgundy);
+  background: rgba(200, 173, 141, 0.12);
+  border: 1px solid rgba(200, 173, 141, 0.3);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ──────────────────────────────────────────────────
+   DEVICE SHOWCASE FEATURE BLOCK
+   ────────────────────────────────────────────────── */
+
+.showcaseFeature {
+  background: linear-gradient(
+    135deg,
+    rgba(74, 14, 23, 0.03) 0%,
+    rgba(200, 173, 141, 0.08) 100%
+  );
+  border: 1px solid rgba(200, 173, 141, 0.3);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-12) var(--space-8);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.showcaseVisualWrap {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(74, 14, 23, 0.08);
+  border: 1px solid rgba(200, 173, 141, 0.35);
+  background: var(--color-white);
+}
+
+.showcaseVisual {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.showcaseContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.quoteTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  color: var(--color-burgundy);
+  line-height: var(--leading-tight);
+}
+
+.quoteText {
+  font-size: var(--text-base);
+  color: var(--color-warm-gray);
+  line-height: var(--leading-relaxed);
+}
+
+.showcaseList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-block: var(--space-2);
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-charcoal);
+  font-weight: var(--font-medium);
+}
+
+.checkIcon {
+  color: var(--color-success);
+  font-weight: bold;
+}
+
+/* ──────────────────────────────────────────────────
+   RESPONSIVE
+   ────────────────────────────────────────────────── */
+
+@media (min-width: 900px) {
+  .pillarsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .showcaseFeature {
+    grid-template-columns: 1.1fr 1fr;
+    padding: var(--space-16) var(--space-12);
+    gap: var(--space-12);
+  }
+}
